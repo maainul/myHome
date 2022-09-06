@@ -73,7 +73,4 @@
     <!-- /.content -->
    
   </div>
-
   @endsection
-
-
