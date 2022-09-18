@@ -40,87 +40,68 @@
             <!-- jquery validation -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Edit Renter Information</h3>
+                <h3 class="card-title">Edit Room Information</h3>
               </div>
-              <!-- /.card-header -->
-              <!-- form start -->
-              <form action="{{ route('renters.update',$renter->id) }}" method="POST">
+              <form action="{{ route('rooms.update',$room->id) }}" method="POST">
                 @csrf
                 @method('PUT')
                 <div class="card-body">
-                  <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" name="name" value="{{$renter->name}}" class="form-control" placeholder="Enter Name">
+                  <div class="row">
+                    <div class="col-md-3">
+                      <div class="form-group">
+                        <label for="room_number">Room Number</label>
+                        <input type="text" name="room_number" class="form-control" value="{{$room->room_number}}" placeholder="Enter Room Number">
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="form-group">
+                        <label for="gas_bill">Gas Bill</label>
+                        <input type="number" name="gas_bill" class="form-control" value="{{$room->gas_bill}}"placeholder="Enter Gas Bill">
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="form-group">
+                      <label for="internet_bill">Internet Bill</label>
+                      <input type="number" name="internet_bill" class="form-control" value="{{$room->internet_bill}}" placeholder="Enter Internet Bill">
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                    <div class="form-group">
+                    <label for="dish_bill">Dish Bill</label>
+                    <input type="number" name="dish_bill" class="form-control" value="{{$room->dish_bill}}" placeholder="Enter Dish Bill">
                   </div>
-                  <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="text" name="email"  value="{{$renter->email}}" class="form-control" placeholder="Enter Email">
                   </div>
+                  <div class="col-md-3">
                   <div class="form-group">
-                    <label for="fb_id">Address</label>
-                    <input type="text" name="fb_id"  value="{{$renter->fb_id}}" class="form-control" placeholder="Enter Facebook ID">
+                    <label for="water_bill">Water Bill</label>
+                    <input type="number" name="water_bill" class="form-control" value="{{$room->water_bill}}" placeholder="Enter Water Bill">
                   </div>
+                  </div>
+                  <div class="col-md-3">
                   <div class="form-group">
-                    <label for="phone_1">Phone 1</label>
-                    <input type="text" name="phone_1"  value="{{$renter->phone_1}}" class="form-control" placeholder="Enter Phone 1">
+                    <label for="dust_bill">Dust Bill</label>
+                    <input type="number" name="dust_bill" class="form-control" value="{{$room->dust_bill}}" placeholder="Enter Dust Bill">
                   </div>
-                  <div class="form-group">
-                    <label for="phone_2">Phone 2</label>
-                    <input type="text" name="phone_2"  value="{{$renter->phone_2}}" class="form-control" placeholder="Enter Phone 2">
                   </div>
-                  <div class="form-group">
-                    <label for="salary">Salary</label>
-                    <input type="text" name="salary" value="{{$renter->salary}}" class="form-control" placeholder="Enter Salary">
-                  </div>
-                  <div class="form-group">
-                    <label for="designation">Designation</label>
-                    <input type="text" name="designation" value="{{$renter->designation}}" class="form-control" placeholder="Enter designation">
-                  </div>
-                  <div class="form-group">
-                    <label for="gender">Gender</label>
-                    <select class="custom-select rounded-0" id="exampleSelectRounded0">
-                    <option value="1">Male</option>
-                    <option value="2">Female</option>
-                  </select>
-                  </div>
-                  <div class="form-group">
-                    <label for="nid">NID</label>
-                    <input type="text" name="nid" value="{{$renter->nid}}" class="form-control" placeholder="Enter nid">
-                  </div>
-                  <div class="form-group">
-                    <label for="birthdate">Birthdate</label>
-                    <input type="date" name="birthdate" value="{{$renter->birthdate}}" class="form-control" placeholder="Enter Birthdate">
-                  </div>
-                  <div class="form-group">
-                    <label  for="address">Textarea</label>
-                        <textarea class="form-control" value="{{$renter->address}}" name="address" rows="3" placeholder="Enter ..."></textarea>
-                  </div>
+                  <div class="col-md-3">
                   <div class="form-group">
                     <label for="status">status</label>
-                    <input type="text" name="status" value="{{$renter->status}}" class="form-control" placeholder="Enter Status">
+                    <select name="status" class="custom-select rounded-0" id="exampleSelectRounded0">
+                    <option value="">-- status --</option>
+                    <option value="1">Active</option>
+                    <option value="2">Inactive</option>
+                  </select>
                   </div>
-                  
-                  
+                  </div>
                 </div>
-                <!-- /.card-body -->
                 <div class="card-footer">
                   <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
               </form>
             </div>
-            <!-- /.card -->
             </div>
-          <!--/.col (left) -->
-          <!-- right column -->
-          <div class="col-md-6">
-
-          </div>
-          <!--/.col (right) -->
         </div>
-        <!-- /.row -->
       </div><!-- /.container-fluid -->
     </section>
-    <!-- /.content -->
   </div>
   @endsection
-  

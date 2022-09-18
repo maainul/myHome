@@ -30,7 +30,7 @@
       <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
         <div class="pull-right">
-            <a class="btn btn-success" href="{{ route('renters.create') }}"> Create New Renter</a>
+            <a class="btn btn-success" href="{{ route('rooms.create') }}"> Create New Room</a>
         </div>
         <div class="row">
           <!-- /.card-header -->
@@ -38,24 +38,30 @@
                 <table class="table table-bordered">
                   <thead>
                     <tr>
-                      <th style="width: 10%">#</th>
-                      <th style="width: 25%">Name</th>
-                      <th style="width: 15%">Phone</th>
-                      <th style="width: 25%">Address</th>
-                      <th style="width: 25%">Action</th>
+                      <th >#</th>
+                      <th >Number</th>
+                      <th >Gas Bill</th>
+                      <th >Internet Bill</th>
+                      <th >Dish Bill</th>
+                      <th >Water Bill</th>
+                      <th >Dust Bill</th>
+                      <th >Action</th>
                     </tr>
                   </thead>
                   <tbody>
-                  @foreach($renters as $renter)
+                  @foreach($rooms as $room)
                     <tr>
                       <td>{{ ++$i }}</td>
-                      <td>{{ $renter-> name }}</td>
-                      <td>{{ $renter-> phone_1 }}</td>
-                      <td>{{ $renter-> address }}</td>
+                      <td>{{ $room-> room_number }}</td>
+                      <td>{{ $room-> gas_bill }}</td>
+                      <td>{{ $room-> internet_bill }}</td>
+                      <td>{{ $room-> dish_bill }}</td>
+                      <td>{{ $room-> water_bill }}</td>
+                      <td>{{ $room-> dust_bill }}</td>
                       <td>
-                        <form action="{{ route('renters.destroy',$renter->id) }}" method="POST">
-                            <a class="btn btn-info" href="{{ route('renters.show',$renter->id) }}">Show</a>
-                            <a class="btn btn-primary" href="{{ route('renters.edit',$renter->id) }}">Edit</a>
+                        <form action="{{ route('rooms.destroy',$room->id) }}" method="POST">
+                            <a class="btn btn-info" href="{{ route('rooms.show',$room->id) }}">Show</a>
+                            <a class="btn btn-primary" href="{{ route('rooms.edit',$room->id) }}">Edit</a>
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger">Delete</button>
@@ -65,7 +71,7 @@
                   @endforeach
                   </tbody>
                 </table>
-                {!! $renters->links() !!}
+                {!! $rooms->links() !!}
               </div>
             </div>
             

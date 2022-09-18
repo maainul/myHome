@@ -16,12 +16,12 @@ class CreateRoomsTable extends Migration
         Schema::create('rooms', function (Blueprint $table) {
             $table->id();
             $table->string("room_number");
-            $table->integer('is_available');
-            $table->integer('gas_bill');
-            $table->integer('internet_bill');
-            $table->integer('dish_bill');
-            $table->integer('water_bill');
-            $table->integer('dust_bill');
+            $table->tinyInteger('status')->default('0');
+            $table->integer('gas_bill')->default('0');
+            $table->integer('internet_bill')->default('0');
+            $table->integer('dish_bill')->default('0');
+            $table->integer('water_bill')->default('0');
+            $table->integer('dust_bill')->default('0');
             $table->timestamps();
         });
     }

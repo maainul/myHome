@@ -27,10 +27,10 @@
         <div class="row">
           <div class="col-lg-12 margin-tb">
               <div class="pull-left">
-                  <h2> Show Renter</h2>
+                  <h2> Show Room</h2>
               </div>
               <div class="pull-right">
-                  <a class="btn btn-primary" href="{{ route('renters.index') }}"> Back</a>
+                  <a class="btn btn-primary" href="{{ route('rooms.index') }}"> Back</a>
               </div>
           </div>
         </div>
@@ -38,15 +38,27 @@
           <div class="col-xs-12 col-sm-12 col-md-12">
               <div class="form-group">
                   <strong>Name:</strong>
-                  {{ $renter->name }}
+                  {{ $room->room_number }}
               </div>
               <div class="form-group">
-                  <strong>Address:</strong>
-                  {{ $renter->address }}
+                  <strong>Gas Bill:</strong>
+                  {{ $room->gas_bill }}
               </div>
               <div class="form-group">
-                  <strong>Phone:</strong>
-                  {{ $renter->phone_1 }}
+                  <strong>Internet Bill:</strong>
+                  {{ $room->internet_bill }}
+              </div>
+              <div class="form-group">
+                  <strong>Dish Bill:</strong>
+                  {{ $room->dish_bill }}
+              </div>
+              <div class="form-group">
+                  <strong>Water Bill:</strong>
+                  {{ $room->water_bill }}
+              </div>
+              <div class="form-group">
+                  <strong>Dust Bill:</strong>
+                  {{ $room->dust_bill }}
               </div>
           </div>
         </div>

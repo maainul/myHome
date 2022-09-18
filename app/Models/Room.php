@@ -9,7 +9,7 @@ class Room extends Model
 {
     protected $fillable = [
         'room_number',
-        'is_available',
+        'status',
         'gas_bill',
         'internet_bill',
         'dish_bill',

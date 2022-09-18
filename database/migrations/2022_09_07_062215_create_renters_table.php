@@ -27,7 +27,7 @@ class CreateRentersTable extends Migration
             $table->integer('gender');
             $table->string("nid");
             $table->date('birthdate');
-            $table->integer('status');
+            $table->tinyInteger('status')->default('0');
             $table->timestamps();
             // $table->foreignId('office_id')->constrained('offices');
         });

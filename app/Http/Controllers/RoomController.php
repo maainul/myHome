@@ -15,7 +15,7 @@ class RoomController extends Controller
     public function index()
     {
         $rooms = Room::latest()->paginate(5);
-        return view('rooms.index',compact('rooms'))-with('i',(request()->input('page',1)-1)+5);
+        return view('rooms.index',compact('rooms'))->with('i',(request()->input('page',1)-1)*5);
     }
 
     /**
@@ -38,12 +38,7 @@ class RoomController extends Controller
     {
         $request->validate([
             'room_number'=>'required',
-            'is_available'=>'required',
-            'gas_bill'=>'required',
-            'internet_bill'=>'required',
-            'dish_bill'=>'required',
-            'water_bill'=>'required',
-            'dust_bill'=>'required',   
+            'status'=>'required',
         ]);
         Room::create($request->all());
         return redirect()->route('rooms.index')->with('success','Room created successfully.');
@@ -83,12 +78,7 @@ class RoomController extends Controller
     {
         $request->validate([
             'room_number'=>'required',
-            'is_available'=>'required',
-            'gas_bill'=>'required',
-            'internet_bill'=>'required',
-            'dish_bill'=>'required',
-            'water_bill'=>'required',
-            'dust_bill'=>'required',   
+            'status'=>'required',
         ]);
         $room->update($request->all());
         return redirect()->route('rooms.index')->with('success','Room update successfully');
