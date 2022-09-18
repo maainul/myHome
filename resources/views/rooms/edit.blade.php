@@ -95,8 +95,10 @@
                   </div>
                 </div>
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <a class="btn btn-primary" href="{{ route('rooms.index') }}"> Back</a>
+                  <button type="submit" class="btn btn-success">Submit</button>
                 </div>
+               
               </form>
             </div>
             </div>
