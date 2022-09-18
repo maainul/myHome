@@ -1,0 +1,5 @@
+ps:
+	php artisan serve
+
+
+.PHONY:ps
