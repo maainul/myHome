@@ -40,73 +40,46 @@
             <!-- jquery validation -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Add Renter Information</h3>
+                <h3 class="card-title">Add Room Information</h3>
               </div>
-              <form action="{{ route('renters.store') }}" method="POST">
+              <form action="{{ route('rooms.store') }}" method="POST">
               @csrf
                 <div class="card-body">
                   <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                       <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" name="name" class="form-control" placeholder="Enter Name">
+                        <label for="room_number">Room Number</label>
+                        <input type="text" name="room_number" class="form-control" placeholder="Enter Room Number">
                       </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                       <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="text" name="email" class="form-control" placeholder="Enter Email">
+                        <label for="gas_bill">Gas Bill</label>
+                        <input type="number" name="gas_bill" class="form-control" placeholder="Enter Gas Bill">
                       </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                       <div class="form-group">
-                      <label for="fb_id">Facebook ID</label>
-                      <input type="text" name="fb_id" class="form-control" placeholder="Enter Facebook ID">
+                      <label for="internet_bill">Internet Bill</label>
+                      <input type="number" name="internet_bill" class="form-control" placeholder="Enter Internet Bill">
                       </div>
                     </div>
                     <div class="col-md-3">
                     <div class="form-group">
-                    <label for="phone_1">Phone 1</label>
-                    <input type="text" name="phone_1" class="form-control" placeholder="Enter Phone 1">
+                    <label for="dish_bill">Dish Bill</label>
+                    <input type="number" name="dish_bill" class="form-control" placeholder="Enter Dish Bill">
                   </div>
                   </div>
                   <div class="col-md-3">
                   <div class="form-group">
-                    <label for="phone_2">Phone 2</label>
-                    <input type="text" name="phone_2" class="form-control" placeholder="Enter Phone 2">
+                    <label for="water_bill">Water Bill</label>
+                    <input type="number" name="water_bill" class="form-control" placeholder="Enter Water Bill">
                   </div>
                   </div>
                   <div class="col-md-3">
                   <div class="form-group">
-                    <label for="salary">Salary</label>
-                    <input type="text" name="salary" class="form-control" placeholder="Enter Salary">
-                  </div>
-                  </div>
-                  <div class="col-md-3">
-                  <div class="form-group">
-                    <label for="designation">Designation</label>
-                    <input type="text" name="designation" class="form-control" placeholder="Enter Designation">
-                  </div>
-                  </div>
-                  <div class="col-md-3">
-                  <div class="form-group">
-                    <label for="gender">Gender</label>
-                    <select name="gender" class="custom-select rounded-0" id="exampleSelectRounded0">
-                    <option value="1">Male</option>
-                    <option value="2">Female</option>
-                  </select>
-                  </div>
-                  </div>
-                  <div class="col-md-3">
-                  <div class="form-group">
-                    <label for="nid">NID</label>
-                    <input type="text" name="nid" class="form-control" placeholder="Enter nid">
-                  </div>
-                  </div>
-                  <div class="col-md-3">
-                  <div class="form-group">
-                    <label for="birthdate">Birthdate</label>
-                    <input type="date" name="birthdate" class="form-control" placeholder="Enter Birthdate">
+                    <label for="dust_bill">Dust Bill</label>
+                    <input type="number" name="dust_bill" class="form-control" placeholder="Enter Dust Bill">
                   </div>
                   </div>
                   <div class="col-md-3">
@@ -119,11 +92,6 @@
                   </select>
                   </div>
                   </div>
-                </div>
-                <div class="form-group">
-                <label  for="address">Textarea</label>
-                    <textarea class="form-control" name="address" rows="3" placeholder="Enter ..."></textarea>
-                </div>
                 </div>
                 <div class="card-footer">
                   <button type="submit" class="btn btn-primary">Submit</button>

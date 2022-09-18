@@ -44,7 +44,7 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form action="{{ route('renters.update',$renters->id) }}" method="POST">
+              <form action="{{ route('renters.update',$renter->id) }}" method="POST">
                 @csrf
                 @method('PUT')
                 <div class="card-body">
@@ -66,11 +66,7 @@
                   </div>
                   <div class="form-group">
                     <label for="phone_2">Phone 2</label>
-                    <input type="text" name="phone_2"  value="{{$renter->phone_1}}" class="form-control" placeholder="Enter Phone 2">
-                  </div>
-                  <div class="form-group">
-                    <label for="number_of_members">Number of Member</label>
-                    <input type="text" name="number_of_members"  value="{{$renter->number_of_members}}" class="form-control" placeholder="Enter Number of Member">
+                    <input type="text" name="phone_2"  value="{{$renter->phone_2}}" class="form-control" placeholder="Enter Phone 2">
                   </div>
                   <div class="form-group">
                     <label for="salary">Salary</label>
@@ -96,17 +92,8 @@
                     <input type="date" name="birthdate" value="{{$renter->birthdate}}" class="form-control" placeholder="Enter Birthdate">
                   </div>
                   <div class="form-group">
-                  <label for="birthdate">Birthdate</label>
-                    <div class="input-group date" id="reservationdate" data-target-input="nearest">
-                        <input type="text" class="form-control datetimepicker-input" data-target="#reservationdate">
-                        <div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
-                            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-                        </div>
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label for="address">Address</label>
-                    <input type="text" name="address" value="{{$renter->address}}" class="form-control" placeholder="Enter Address">
+                    <label  for="address">Textarea</label>
+                        <textarea class="form-control" value="{{$renter->address}}" name="address" rows="3" placeholder="Enter ..."></textarea>
                   </div>
                   <div class="form-group">
                     <label for="status">status</label>

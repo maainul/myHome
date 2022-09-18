@@ -21,14 +21,13 @@ class CreateRentersTable extends Migration
             $table->string("fb_id");
             $table->string("phone_1");
             $table->string("phone_2");
-            $table->integer('number_of_members');
             $table->integer('salary');
             $table->string("designation");
             $table->string("address");
             $table->integer('gender');
             $table->string("nid");
             $table->date('birthdate');
-            $table->integer('status');
+            $table->tinyInteger('status')->default('0');
             $table->timestamps();
             // $table->foreignId('office_id')->constrained('offices');
         });

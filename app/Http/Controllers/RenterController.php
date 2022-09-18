@@ -38,10 +38,6 @@ class RenterController extends Controller
     {
         $request->validate([
             'name'=>'required',
-            'email'=>'required',
-            'phone_1'=>'required',
-            'number_of_members'=>'required',
-            'salary'=>'required',
             'gender'=>'required',
         ]);
         Renter::create($request->all());
