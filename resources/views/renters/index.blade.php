@@ -44,6 +44,7 @@
                       <th>Phone</th>
                       <th>Home</th>
                       <th>Address</th>
+                      <th>Status</th>
                       <th>Action</th>
                     </tr>
                   </thead>
@@ -56,6 +57,7 @@
                       <td>{{ $renter-> phone_1 }}</td>
                       <td>{{ $renter-> home_id }}</td>
                       <td>{{ $renter-> address }}</td>
+                      <td>{{ $renter-> status }}</td>
                       <td>
                         <form action="{{ route('renters.destroy',$renter->id) }}" method="POST">
                             <a class="btn btn-info" href="{{ route('renters.show',$renter->id) }}">Show</a>
