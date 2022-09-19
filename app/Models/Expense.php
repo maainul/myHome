@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
-use App\Models\Floor;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Room extends Model
+class Expense extends Model
 {
     protected $fillable = [
-        'room_number',
+        'expense_type',
+        'expense_name',
+        'ex_des',
+        'amount',
+        'ex_date',
         'status',
-        'floor_id',
     ];
 }

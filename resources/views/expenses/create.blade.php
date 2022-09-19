@@ -40,40 +40,46 @@
             <!-- jquery validation -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Add Expenses Information</h3>
+                <h3 class="card-title">Add Expense Information</h3>
               </div>
               <form action="{{ route('expenses.store') }}" method="POST">
               @csrf
                 <div class="card-body">
                   <div class="row">
-                  <div class="col-md-3">
-                  <div class="form-group">
-                    <label for="expense_type">Expenses Types</label>
-                    <select name="expense_type" class="custom-select rounded-0" id="exampleSelectRounded0">
-                    <option value="">-- Expenses Types --</option>
-                    <option value="1">New Q</option>
-                    <option value="2">New P</option>
-                  </select>
-                  </div>
-                  </div>
+                    
+                    <div class="col-md-3">
+                    <div class="form-group">
+                      <label for="expense_type">Expense Types</label>
+                      <select name="expense_type" class="custom-select rounded-0" id="exampleSelectRounded0">
+                      <option value="">-- Expense Types --</option>
+                      @foreach ($data as $item)
+                        <option value="{{ $item->id}}">{{ $item->name}}</option>
+                      @endforeach
+                    </select>
+                    </div>
+                    </div>
+
                     <div class="col-md-3">
                       <div class="form-group">
                         <label for="expense_name">Expense Name</label>
                         <input type="text" name="expense_name" class="form-control" placeholder="Enter Expense Name">
                       </div>
                     </div>
+
                     <div class="col-md-3">
                       <div class="form-group">
                       <label for="amount">Amount</label>
-                      <input type="number" name="amount" class="form-control" placeholder="Enter amount">
+                      <input type="number" name="amount" class="form-control" placeholder="Enter Amount">
                       </div>
                     </div>
+
                     <div class="col-md-3">
-                    <div class="form-group">
-                    <label for="ex_date">date</label>
-                    <input type="date" name="ex_date" class="form-control" placeholder="Enter date">
-                  </div>
-                  </div>
+                      <div class="form-group">
+                      <label for="ex_date">date</label>
+                      <input type="date" name="ex_date" class="form-control" placeholder="Enter date">
+                      </div>
+                    </div>
+
                   <div class="col-md-12">
                   <div class="form-group">
                   <label for="ex_des">Description</label>

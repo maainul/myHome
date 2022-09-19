@@ -5,10 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Expenses extends Model
+class Home extends Model
 {
-    protected $fillable = [
-        'expense_type',
-        'expenese_name',
-    ];
+    protected $fillable = ['name','address'];
 }

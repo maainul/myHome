@@ -30,36 +30,31 @@
       <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
         <div class="pull-right">
-            <a class="btn btn-success" href="{{ route('expenses.create') }}"> Create New Expense</a>
+            <a class="btn btn-success" href="{{ route('homes.create') }}"> Create New Home</a>
         </div>
         <div class="row">
+        
           <!-- /.card-header -->
           <div class="card-body">
                 <table class="table table-bordered">
                   <thead>
                     <tr>
-                      <th >#</th>
-                      <th >Expense Type</th>
-                      <th >Expense Name</th>
-                      <th >Amount</th>
-                      <th >Date</th>
-                      <th >Status</th>
-                      <th >Action</th>
+                      <th>#</th>
+                      <th style="width: 25%">Home Name</th>
+                      <th style="width: 25%">Address</th>
+                      <th style="width: 25%">Action</th>
                     </tr>
                   </thead>
                   <tbody>
-                  @foreach($expenses as $expense)
+                  @foreach($homes as $home)
                     <tr>
                       <td>{{ ++$i }}</td>
-                      <td>{{ $expense-> expense_type }}</td>
-                      <td>{{ $expense-> expense_name }}</td>
-                      <td>{{ $expense-> amount }}</td>
-                      <td>{{ $expense-> ex_date }}</td>
-                      <td>{{ $expense-> status }}</td>
+                      <td>{{ $home-> name }}</td>
+                      <td>{{ $home-> address }}</td>
                       <td>
-                        <form action="{{ route('expenses.destroy',$expense->id) }}" method="POST">
-                            <a class="btn btn-info" href="{{ route('expenses.show',$expense->id) }}">Show</a>
-                            <a class="btn btn-primary" href="{{ route('expenses.edit',$expense->id) }}">Edit</a>
+                        <form action="{{ route('homes.destroy',$home->id) }}" method="POST">
+                            <a class="btn btn-info" href="{{ route('homes.show',$home->id) }}">Show</a>
+                            <a class="btn btn-primary" href="{{ route('homes.edit',$home->id) }}">Edit</a>
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger">Delete</button>
@@ -69,7 +64,7 @@
                   @endforeach
                   </tbody>
                 </table>
-                {!! $expenses->links() !!}
+                {!! $homes->links() !!}
               </div>
             </div>
             
@@ -78,5 +73,6 @@
       
     </section>
     <!-- /.content -->
+   
   </div>
   @endsection

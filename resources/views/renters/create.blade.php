@@ -108,8 +108,9 @@
                     <label for="office_id">Office</label>
                     <select name="office_id" class="custom-select rounded-0" id="exampleSelectRounded0">
                     <option value="">-- Office --</option>
-                    <option value="1">Beximco</option>
-                    <option value="2">Big boss</option>
+                    @foreach ($data as $item)
+                    <option value="{{ $item->id}}">{{ $item->name}}</option>
+                    @endforeach
                   </select>
                   </div>
                   </div>

@@ -52,8 +52,9 @@
                     <label for="floor_id">Floor</label>
                     <select name="floor_id" class="custom-select rounded-0" id="exampleSelectRounded0">
                     <option value="">-- Floor --</option>
-                    <option value="1">1st</option>
-                    <option value="2">2nd</option>
+                    @foreach ($data as $item)
+                    <option value="{{ $item->id}}">{{ $item->floor_number}}</option>
+                    @endforeach
                   </select>
                   </div>
                   </div>

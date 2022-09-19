@@ -3,37 +3,24 @@
 namespace App\Http\Controllers;
 
 use App\Models\Renter;
+use App\Models\Office;
 use Illuminate\Http\Request;
 
 class RenterController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
         $renters = Renter::latest()->paginate(5);
         return view('renters.index',compact('renters'))->with('i',(request()->input('page',1)-1)*5);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        return view('renters.create');
+        $data = Office::all();
+        return view('renters.create',['data'=>$data]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         $request->validate([
@@ -45,35 +32,17 @@ class RenterController extends Controller
         
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Renter  $renter
-     * @return \Illuminate\Http\Response
-     */
     public function show(Renter $renter)
     {
         return view('renters.show',compact('renter'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Renter  $renter
-     * @return \Illuminate\Http\Response
-     */
     public function edit(Renter $renter)
     {
-        return view('renters.edit',compact('renter'));
+        $data = Office::all();
+        return view('renters.edit',compact('renter','data'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Renter  $renter
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, Renter $renter)
     {
         $request->validate([
@@ -85,12 +54,6 @@ class RenterController extends Controller
         return redirect()->route('renters.index')->with('success','Renter updated successfully');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Renter  $renter
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(Renter $renter)
     {
         $renter->delete();

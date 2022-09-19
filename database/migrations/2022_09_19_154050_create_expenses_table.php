@@ -17,7 +17,7 @@ class CreateExpensesTable extends Migration
             $table->id();
             $table->Integer('expense_type');
             $table->string('ex_des')->nullable();
-            $table->string('expense_name')->nullable();
+            $table->string('expense_name');
             $table->float('amount')->default('0');
             $table->date('ex_date');
             $table->tinyInteger('status')->default('1');

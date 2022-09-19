@@ -1,0 +1,64 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\Expense;
+use App\Models\ExpenseTypes;
+use Illuminate\Http\Request;
+
+class ExpenseController extends Controller
+{
+
+    public function index()
+    {
+        $expenses = Expense::latest()->paginate(5);
+        return view('expenses.index',compact('expenses'))->with('i',(request()->input('page',1)-1)*5);
+    }
+
+    public function create()
+    {
+        $data = ExpenseTypes::all();
+        return view('expenses.create',['data'=>$data]);
+    }
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'expense_type'=>'required',
+            'expense_name'=>'required',
+            'amount'=>'required',
+            'ex_date'=>'required',
+        ]);
+        Expense::create($request->all());
+        return redirect()->route('expenses.index')->with('success','Expense created successfully.');
+    }
+
+    public function show(Expense $expense)
+    {
+        return view('expenses.show',compact('expense'));
+    }
+
+    public function edit(Expense $expense)
+    {
+        $data = ExpenseTypes::all();
+        return view('expenses.edit',compact('expense','data'));
+    }
+
+    public function update(Request $request, Expense $expense)
+    {
+        $request->validate([
+        'expense_type'=>'required',
+        'expense_name'=>'required',
+        'amount'=>'required',
+        'ex_date'=>'required',
+    ]);
+    $expense -> update($request->all());
+    return redirect()->route('expenses.index')->with('success','Expense Edited successfully.');
+    }
+
+    public function destroy(Expense $expense)
+    {
+        $expense->delete();
+        return redirect()->route('expenses.index')->with('success','Expense deleted successfully');
+    }
+}

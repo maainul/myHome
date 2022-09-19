@@ -16,8 +16,8 @@ class CreateRoomsTable extends Migration
         Schema::create('rooms', function (Blueprint $table) {
             $table->id();
             $table->string("room_number");
+            $table->integer('floor_id');
             $table->tinyInteger('status')->default('0');
-            $table->integer('floor_id')->default('0');
             $table->integer('gas_bill')->default('0');
             $table->integer('internet_bill')->default('0');
             $table->integer('dish_bill')->default('0');
