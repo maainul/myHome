@@ -105,6 +105,16 @@
                   </div>
                   <div class="col-md-3">
                   <div class="form-group">
+                    <label for="office_id">Office</label>
+                    <select name="office_id" class="custom-select rounded-0" id="exampleSelectRounded0">
+                    <option value="">-- Office --</option>
+                    <option value="1">Beximco</option>
+                    <option value="2">Big boss</option>
+                  </select>
+                  </div>
+                  </div>
+                  <div class="col-md-3">
+                  <div class="form-group">
                     <label for="birthdate">Birthdate</label>
                     <input type="date" name="birthdate" class="form-control" placeholder="Enter Birthdate">
                   </div>
@@ -121,7 +131,7 @@
                   </div>
                 </div>
                 <div class="form-group">
-                <label  for="address">Textarea</label>
+                <label  for="address">Address</label>
                     <textarea class="form-control" name="address" rows="3" placeholder="Enter ..."></textarea>
                 </div>
                 </div>

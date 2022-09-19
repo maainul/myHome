@@ -38,6 +38,7 @@ class RoomController extends Controller
     {
         $request->validate([
             'room_number'=>'required',
+            'floor_id'=>'required',
             'status'=>'required',
         ]);
         Room::create($request->all());
@@ -78,6 +79,7 @@ class RoomController extends Controller
     {
         $request->validate([
             'room_number'=>'required',
+            'floor_id'=>'required',
             'status'=>'required',
         ]);
         $room->update($request->all());

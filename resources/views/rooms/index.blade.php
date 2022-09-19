@@ -39,6 +39,7 @@
                   <thead>
                     <tr>
                       <th >#</th>
+                      <th >Floor</th>
                       <th >Number</th>
                       <th >Gas Bill</th>
                       <th >Internet Bill</th>
@@ -52,6 +53,7 @@
                   @foreach($rooms as $room)
                     <tr>
                       <td>{{ ++$i }}</td>
+                      <td>{{ $room-> floor_id }}</td>
                       <td>{{ $room-> room_number }}</td>
                       <td>{{ $room-> gas_bill }}</td>
                       <td>{{ $room-> internet_bill }}</td>

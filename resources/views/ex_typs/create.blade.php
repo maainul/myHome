@@ -40,17 +40,16 @@
             <!-- jquery validation -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Edit Floor Information</h3>
+                <h3 class="card-title">Add Expense Types Information</h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form action="{{ route('floors.update',$floor->id) }}" method="POST">
+              <form action="{{ route('ex_typs.store') }}" method="POST">
                 @csrf
-                @method('PUT')
                 <div class="card-body">
                   <div class="form-group">
-                    <label for="floor_number">Floor Number</label>
-                    <input type="text" name="floor_number" value="{{$floor->floor_number}}" class="form-control" placeholder="Enter Floor Info">
+                    <label for="name">Expense Type Name</label>
+                    <input type="text" name="name" class="form-control" placeholder="Enter Name Info">
                   </div>
                 </div>
                 <!-- /.card-body -->
@@ -62,11 +61,6 @@
             <!-- /.card -->
             </div>
           <!--/.col (left) -->
-          <!-- right column -->
-          <div class="col-md-6">
-
-          </div>
-          <!--/.col (right) -->
         </div>
         <!-- /.row -->
       </div><!-- /.container-fluid -->

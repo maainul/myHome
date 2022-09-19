@@ -47,6 +47,17 @@
                 @method('PUT')
                 <div class="card-body">
                   <div class="row">
+                  <div class="col-md-3">
+                  <div class="form-group">
+                    <label for="floor_id">Floor</label>
+                    <select name="floor_id" class="custom-select rounded-0" id="exampleSelectRounded0">
+                    <option value="">-- Floor --</option>
+                    <option value="1">1st</option>
+                    <option value="2">2nd</option>
+                  </select>
+                  </div>
+                  </div>
+
                     <div class="col-md-3">
                       <div class="form-group">
                         <label for="room_number">Room Number</label>

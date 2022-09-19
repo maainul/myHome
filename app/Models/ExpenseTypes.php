@@ -5,11 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Room extends Model
+class ExpenseTypes extends Model
 {
-    protected $fillable = [
-        'room_number',
-        'status',
-        'floor_id',
-    ];
+    protected $fillable = ['name'];
 }

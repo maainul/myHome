@@ -40,17 +40,17 @@
             <!-- jquery validation -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Edit Floor Information</h3>
+                <h3 class="card-title">Edit Expense Information</h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form action="{{ route('floors.update',$floor->id) }}" method="POST">
+              <form action="" method="POST">
                 @csrf
                 @method('PUT')
                 <div class="card-body">
                   <div class="form-group">
-                    <label for="floor_number">Floor Number</label>
-                    <input type="text" name="floor_number" value="{{$floor->floor_number}}" class="form-control" placeholder="Enter Floor Info">
+                    <label for="name">Expense Name</label>
+                    <input type="text" name="name" value="{{$expenseTypes->name}}" class="form-control" placeholder="Enter Expense Types Name">
                   </div>
                 </div>
                 <!-- /.card-body -->

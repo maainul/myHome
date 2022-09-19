@@ -30,34 +30,29 @@
       <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
         <div class="pull-right">
-            <a class="btn btn-success" href="{{ route('renters.create') }}"> Create New Renter</a>
+            <a class="btn btn-success" href="{{ route('ex_typs.create') }}"> Create New ET</a>
         </div>
         <div class="row">
+        
           <!-- /.card-header -->
           <div class="card-body">
                 <table class="table table-bordered">
                   <thead>
                     <tr>
-                      <th>#</th>
-                      <th>Name</th>
-                      <th>Office</th>
-                      <th>Phone</th>
-                      <th>Address</th>
-                      <th>Action</th>
+                      <th style="width: 25%">#</th>
+                      <th style="width: 25%">Expense Type Name</th>
+                      <th style="width: 25%">Action</th>
                     </tr>
                   </thead>
                   <tbody>
-                  @foreach($renters as $renter)
+                  @foreach($ex_typs as $et)
                     <tr>
                       <td>{{ ++$i }}</td>
-                      <td>{{ $renter-> name }}</td>
-                      <td>{{ $renter-> office_id }}</td>
-                      <td>{{ $renter-> phone_1 }}</td>
-                      <td>{{ $renter-> address }}</td>
+                      <td>{{ $et-> name }}</td>
                       <td>
-                        <form action="{{ route('renters.destroy',$renter->id) }}" method="POST">
-                            <a class="btn btn-info" href="{{ route('renters.show',$renter->id) }}">Show</a>
-                            <a class="btn btn-primary" href="{{ route('renters.edit',$renter->id) }}">Edit</a>
+                        <form action="{{ route('ex_typs.destroy',$et->id) }}" method="POST">
+                            <a class="btn btn-info" href="{{ route('ex_typs.show',$et->id) }}">Show</a>
+                            <a class="btn btn-primary" href="{{ route('ex_typs.edit',$et->id) }}">Edit</a>
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger">Delete</button>
@@ -67,13 +62,11 @@
                   @endforeach
                   </tbody>
                 </table>
-                {!! $renters->links() !!}
+                {!! $ex_typs->links() !!}
               </div>
             </div>
-            
         <!-- /.row -->
       </div><!-- /.container-fluid -->
-      
     </section>
     <!-- /.content -->
   </div>

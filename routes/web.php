@@ -21,3 +21,5 @@ Route::resource('floors','FloorController');
 Route::resource('offices','OfficeController');
 Route::resource('renters','RenterController');
 Route::resource('rooms','RoomController');
+Route::resource('ex_typs','ExpenseTypesController');
+Route::resource('expenses','ExpensesController');
