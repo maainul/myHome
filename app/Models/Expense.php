@@ -10,6 +10,7 @@ class Expense extends Model
     protected $fillable = [
         'expense_type',
         'expense_name',
+        'home_id',
         'ex_des',
         'amount',
         'ex_date',

@@ -42,6 +42,7 @@
                       <th>Name</th>
                       <th>Office</th>
                       <th>Phone</th>
+                      <th>Home</th>
                       <th>Address</th>
                       <th>Action</th>
                     </tr>
@@ -53,6 +54,7 @@
                       <td>{{ $renter-> name }}</td>
                       <td>{{ $renter-> office_id }}</td>
                       <td>{{ $renter-> phone_1 }}</td>
+                      <td>{{ $renter-> home_id }}</td>
                       <td>{{ $renter-> address }}</td>
                       <td>
                         <form action="{{ route('renters.destroy',$renter->id) }}" method="POST">

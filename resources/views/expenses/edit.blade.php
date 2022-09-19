@@ -53,6 +53,18 @@
                 </div>
 
                 <div class="col-md-3">
+                    <div class="form-group">
+                      <label for="home_id">Home</label>
+                      <select name="home_id" class="custom-select rounded-0">
+                      <option value="">-- Select Home  --</option>
+                      @foreach ($home as $item)
+                        <option value="{{ $item->id}}">{{ $item->name}}</option>
+                      @endforeach
+                    </select>
+                    </div>
+                    </div>
+
+                <div class="col-md-3">
                       <div class="form-group">
                         <label for="expense_name">Expense Name</label>
                         <input type="text" name="expense_name" value="{{$expense->expense_name}}" class="form-control" placeholder="Enter Expense Name">

@@ -17,6 +17,7 @@ class CreateRoomsTable extends Migration
             $table->id();
             $table->string("room_number");
             $table->integer('floor_id');
+            $table->Integer('home_id');
             $table->tinyInteger('status')->default('0');
             $table->integer('gas_bill')->default('0');
             $table->integer('internet_bill')->default('0');

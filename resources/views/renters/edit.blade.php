@@ -98,6 +98,18 @@
                   </select>
                   </div>
                   </div>
+                  <div class="col-md-3">
+                    <div class="form-group">
+                      <label for="home_id">Home</label>
+                      <select name="home_id" class="custom-select rounded-0">
+                      <option value="">-- Select Home  --</option>
+                      @foreach ($home as $item)
+                        <option value="{{ $item->id}}">{{ $item->name}}</option>
+                      @endforeach
+                    </select>
+                    </div>
+                    </div>
+
                   <div class="form-group">
                     <label for="birthdate">Birthdate</label>
                     <input type="date" name="birthdate" value="{{$renter->birthdate}}" class="form-control" placeholder="Enter Birthdate">

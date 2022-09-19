@@ -16,6 +16,7 @@ class CreateFloorsTable extends Migration
         Schema::create('floors', function (Blueprint $table) {
             $table->id();
             $table->string('floor_number');
+            $table->Integer('home_id');
             $table->timestamps();
         });
     }

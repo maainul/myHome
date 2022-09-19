@@ -7,5 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Floor extends Model
 {
-    protected $fillable = ['floor_number'];
+    protected $fillable = ['floor_number','home_id'];
 }

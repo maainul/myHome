@@ -48,11 +48,25 @@
                 @csrf
                 @method('PUT')
                 <div class="card-body">
+                  <div class="row">
+                  <div class="col-md-6">
                   <div class="form-group">
                     <label for="floor_number">Floor Number</label>
                     <input type="text" name="floor_number" value="{{$floor->floor_number}}" class="form-control" placeholder="Enter Floor Info">
                   </div>
                 </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="expense_type">Home</label>
+                      <select name="expense_type" class="custom-select rounded-0" id="exampleSelectRounded0">
+                      <option value="">-- Select Home  --</option>
+                      @foreach ($home as $item)
+                        <option value="{{ $item->id}}">{{ $item->name}}</option>
+                      @endforeach
+                    </select>
+                    </div>
+                    </div>
+</div>
                 <!-- /.card-body -->
                 <div class="card-footer">
                   <button type="submit" class="btn btn-primary">Submit</button>

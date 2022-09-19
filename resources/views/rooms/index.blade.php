@@ -38,22 +38,22 @@
                 <table class="table table-bordered">
                   <thead>
                     <tr>
-                      <th >#</th>
                       <th >Floor</th>
+                      <th >Home</th>
                       <th >Number</th>
                       <th >Gas Bill</th>
                       <th >Internet Bill</th>
                       <th >Dish Bill</th>
                       <th >Water Bill</th>
-                      <th >Dust Bill</th>
+                      <th >Total</th>
                       <th >Action</th>
                     </tr>
                   </thead>
                   <tbody>
                   @foreach($rooms as $room)
                     <tr>
-                      <td>{{ ++$i }}</td>
                       <td>{{ $room-> floor_id }}</td>
+                      <td>{{ $room-> home_id }}</td>
                       <td>{{ $room-> room_number }}</td>
                       <td>{{ $room-> gas_bill }}</td>
                       <td>{{ $room-> internet_bill }}</td>

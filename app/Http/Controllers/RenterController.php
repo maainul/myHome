@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Renter;
 use App\Models\Office;
+use App\Models\Home;
 use Illuminate\Http\Request;
 
 class RenterController extends Controller
@@ -18,7 +19,8 @@ class RenterController extends Controller
     public function create()
     {
         $data = Office::all();
-        return view('renters.create',['data'=>$data]);
+        $home = Home::all();
+        return view('renters.create',['data'=>$data,'home'=>$home]);
     }
 
     public function store(Request $request)
@@ -26,6 +28,7 @@ class RenterController extends Controller
         $request->validate([
             'name'=>'required',
             'gender'=>'required',
+            'home_id'=>'required',
         ]);
         Renter::create($request->all());
         return redirect()->route('renters.index')->with('success','Renter create successfully');
@@ -40,7 +43,8 @@ class RenterController extends Controller
     public function edit(Renter $renter)
     {
         $data = Office::all();
-        return view('renters.edit',compact('renter','data'));
+        $home = Home::all();
+        return view('renters.edit',compact('renter','data','home'));
     }
 
     public function update(Request $request, Renter $renter)
@@ -49,6 +53,7 @@ class RenterController extends Controller
             'name'=>'required',
             'phone_1'=>'required',
             'gender'=>'required',
+            'home_id'=>'required',
         ]);
         $renter-> update($request->all());
         return redirect()->route('renters.index')->with('success','Renter updated successfully');

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Floor;
+use App\Models\Home;
 use Illuminate\Http\Request;
 
 class FloorController extends Controller
@@ -25,7 +26,8 @@ class FloorController extends Controller
      */
     public function create()
     {
-        return view('floors.create');
+        $home = Home::all();
+        return view('floors.create',['home'=>$home]);
     }
 
     /**
@@ -38,6 +40,7 @@ class FloorController extends Controller
     {
         $request -> validate([
             'floor_number' => 'required',
+            'home_id' => 'required',
         ]);
         Floor::create($request->all());
         return redirect()->route('floors.index')->with('success','Floor created successfully.');
@@ -62,7 +65,8 @@ class FloorController extends Controller
      */
     public function edit(Floor $floor)
     {
-        return view('floors.edit',compact('floor'));
+        $home = Home::all();
+        return view('floors.edit',compact('floor','home'));
     }
 
     /**
@@ -76,6 +80,7 @@ class FloorController extends Controller
     {
         $request->validate([
             'floor_number' => 'required',
+            'home_id' => 'required',
         ]);
 
         $floor -> update($request->all());

@@ -41,6 +41,7 @@
                     <tr>
                       <th style="width: 25%">#</th>
                       <th style="width: 25%">Floor Number</th>
+                      <th style="width: 25%">Home Name</th>
                       <th style="width: 25%">Action</th>
                     </tr>
                   </thead>
@@ -49,6 +50,7 @@
                     <tr>
                       <td>{{ ++$i }}</td>
                       <td>{{ $floor-> floor_number }}</td>
+                      <td>{{ $floor-> home_id }}</td>
                       <td>
                         <form action="{{ route('floors.destroy',$floor->id) }}" method="POST">
                             <a class="btn btn-info" href="{{ route('floors.show',$floor->id) }}">Show</a>

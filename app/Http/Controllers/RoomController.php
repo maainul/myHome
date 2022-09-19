@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Room;
+use App\Models\Home;
 use App\Models\Floor;
 use Illuminate\Http\Request;
 
@@ -17,7 +18,8 @@ class RoomController extends Controller
     public function create()
     {
        $data = Floor::all();
-        return view('rooms.create',['data'=>$data]);
+       $home = Home::all();
+        return view('rooms.create',['data'=>$data,'home'=>$home]);
     }
 
     public function store(Request $request)
@@ -25,6 +27,7 @@ class RoomController extends Controller
         $request->validate([
             'room_number'=>'required',
             'floor_id'=>'required',
+            'home_id'=>'required',
             'status'=>'required',
         ]);
         Room::create($request->all());
@@ -40,7 +43,8 @@ class RoomController extends Controller
     public function edit(Room $room)
     {
         $data = Floor::all();
-        return view('rooms.edit',compact('room','data'));
+        $home = Home::all();
+        return view('rooms.edit',compact('room','data','home'));
     }
 
     public function update(Request $request, Room $room)
@@ -48,6 +52,7 @@ class RoomController extends Controller
         $request->validate([
             'room_number'=>'required',
             'floor_id'=>'required',
+            'home_id'=>'required',
             'status'=>'required',
         ]);
         $room->update($request->all());

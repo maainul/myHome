@@ -43,7 +43,7 @@
                       <th >Expense Name</th>
                       <th >Amount</th>
                       <th >Date</th>
-                      <th >Status</th>
+                      <th >Home</th>
                       <th >Action</th>
                     </tr>
                   </thead>
@@ -55,7 +55,7 @@
                       <td>{{ $expense-> expense_name }}</td>
                       <td>{{ $expense-> amount }}</td>
                       <td>{{ $expense-> ex_date }}</td>
-                      <td>{{ $expense-> status }}</td>
+                      <td>{{ $expense-> home_id }}</td>
                       <td>
                         <form action="{{ route('expenses.destroy',$expense->id) }}" method="POST">
                             <a class="btn btn-info" href="{{ route('expenses.show',$expense->id) }}">Show</a>

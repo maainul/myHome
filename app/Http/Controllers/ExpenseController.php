@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Expense;
+use App\Models\Home;
 use App\Models\ExpenseTypes;
 use Illuminate\Http\Request;
 
@@ -18,7 +19,8 @@ class ExpenseController extends Controller
     public function create()
     {
         $data = ExpenseTypes::all();
-        return view('expenses.create',['data'=>$data]);
+        $home = Home::all();
+        return view('expenses.create',['data'=>$data,'home'=>$home]);
     }
 
     public function store(Request $request)
@@ -28,6 +30,7 @@ class ExpenseController extends Controller
             'expense_name'=>'required',
             'amount'=>'required',
             'ex_date'=>'required',
+            'home_id'=>'required',
         ]);
         Expense::create($request->all());
         return redirect()->route('expenses.index')->with('success','Expense created successfully.');
@@ -41,7 +44,8 @@ class ExpenseController extends Controller
     public function edit(Expense $expense)
     {
         $data = ExpenseTypes::all();
-        return view('expenses.edit',compact('expense','data'));
+        $home = Home::all();
+        return view('expenses.edit',compact('expense','data','home'));
     }
 
     public function update(Request $request, Expense $expense)
@@ -51,6 +55,7 @@ class ExpenseController extends Controller
         'expense_name'=>'required',
         'amount'=>'required',
         'ex_date'=>'required',
+        'home_id'=>'required',
     ]);
     $expense -> update($request->all());
     return redirect()->route('expenses.index')->with('success','Expense Edited successfully.');

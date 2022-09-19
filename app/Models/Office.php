@@ -11,8 +11,4 @@ class Office extends Model
         'name',
         'address',
     ];
-    
-    // public function renters(){
-    //     return $this->hasMany(Renter::class);
-    // }
 }
