@@ -52,8 +52,8 @@
                     <label for="floor_id">Floor</label>
                     <select name="floor_id" class="custom-select rounded-0" id="exampleSelectRounded0">
                     <option value="">-- Floor --</option>
-                    @foreach ($data as $item)
-                    <option value="{{ $item->id}}">{{ $item->floor_number}}</option>
+                    @foreach($data as $item)
+                      <option value="{{ $item->id }}" {{$room->floor_id == $item->id  ? 'selected' : ''}}>{{ $item->floor_number}}</option>
                     @endforeach
                   </select>
                   </div>
@@ -63,8 +63,8 @@
                       <label for="home_id">Home</label>
                       <select name="home_id" class="custom-select rounded-0">
                       <option value="">-- Select Home  --</option>
-                      @foreach ($home as $item)
-                        <option value="{{ $item->id}}">{{ $item->name}}</option>
+                      @foreach($home as $item)
+                      <option value="{{ $item->id }}" {{$room->home_id == $item->id  ? 'selected' : ''}}>{{ $item->name}}</option>
                       @endforeach
                     </select>
                     </div>

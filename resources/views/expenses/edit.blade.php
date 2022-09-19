@@ -45,8 +45,8 @@
                       <label for="expense_type">Expense Types</label>
                       <select name="expense_type" class="custom-select rounded-0" id="exampleSelectRounded0">
                       <option value="">-- Expense Types --</option>
-                      @foreach ($data as $item)
-                        <option value="{{ $item->id}}">{{ $item->name}}</option>
+                      @foreach($data as $item)
+                      <option value="{{ $item->id }}" {{$expense->expense_type == $item->id  ? 'selected' : ''}}>{{ $item->name}}</option>
                       @endforeach
                     </select>
                     </div>
@@ -57,8 +57,8 @@
                       <label for="home_id">Home</label>
                       <select name="home_id" class="custom-select rounded-0">
                       <option value="">-- Select Home  --</option>
-                      @foreach ($home as $item)
-                        <option value="{{ $item->id}}">{{ $item->name}}</option>
+                      @foreach($home as $item)
+                      <option value="{{ $item->id }}" {{$expense->home_id == $item->id  ? 'selected' : ''}}>{{ $item->name}}</option>
                       @endforeach
                     </select>
                     </div>

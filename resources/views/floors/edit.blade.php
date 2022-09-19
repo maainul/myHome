@@ -60,8 +60,8 @@
                       <label for="expense_type">Home</label>
                       <select name="expense_type" class="custom-select rounded-0" id="exampleSelectRounded0">
                       <option value="">-- Select Home  --</option>
-                      @foreach ($home as $item)
-                        <option value="{{ $item->id}}">{{ $item->name}}</option>
+                      @foreach($home as $hd)
+                      <option value="{{ $hd->id }}" {{$floor->home_id == $hd->id  ? 'selected' : ''}}>{{ $hd->name}}</option>
                       @endforeach
                     </select>
                     </div>
