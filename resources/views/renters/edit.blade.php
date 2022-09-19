@@ -118,12 +118,6 @@
                     <label  for="address">Textarea</label>
                         <textarea class="form-control" value="{{$renter->address}}" name="address" rows="3" placeholder="Enter ..."></textarea>
                   </div>
-                  <div class="form-group">
-                    <label for="status">status</label>
-                    <input type="text" name="status" value="{{$renter->status}}" class="form-control" placeholder="Enter Status">
-                  </div>
-                  
-                  
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">

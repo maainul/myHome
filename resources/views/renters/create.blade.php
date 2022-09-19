@@ -121,16 +121,6 @@
                   </div>
                   </div>
                   <div class="col-md-3">
-                  <div class="form-group">
-                    <label for="status">status</label>
-                    <select name="status" class="custom-select rounded-0" id="exampleSelectRounded0">
-                    <option value="">-- status --</option>
-                    <option value="1">Active</option>
-                    <option value="2">Inactive</option>
-                  </select>
-                  </div>
-                  </div>
-                  <div class="col-md-3">
                     <div class="form-group">
                       <label for="home_id">Home</label>
                       <select name="home_id" class="custom-select rounded-0">

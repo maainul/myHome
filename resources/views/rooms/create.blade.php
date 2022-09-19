@@ -106,16 +106,6 @@
                     <input type="number" name="dust_bill" class="form-control" placeholder="Enter Dust Bill">
                   </div>
                   </div>
-                  <div class="col-md-3">
-                  <div class="form-group">
-                    <label for="status">status</label>
-                    <select name="status" class="custom-select rounded-0" id="exampleSelectRounded0">
-                    <option value="">-- status --</option>
-                    <option value="1">Active</option>
-                    <option value="2">Inactive</option>
-                  </select>
-                  </div>
-                  </div>
                 </div>
                 <div class="card-footer">
                   <a type="submit" href="{{ route('rooms.index') }}" class="btn btn-info">Back</a>
