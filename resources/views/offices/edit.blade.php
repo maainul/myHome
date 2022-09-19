@@ -52,13 +52,15 @@
                     <label for="name">Office Name</label>
                     <input type="text" name="name" value="{{$office->name}}"class="form-control" placeholder="Enter Office Name">
                   </div>
-                  <div class="form-group">
-                    <label for="address">Office Address</label>
-                    <input type="text" name="address" value="{{$office->address}}"class="form-control" placeholder="Enter Address">
-                  </div>
+                <div class="form-group">
+                <label  for="address">Address</label>
+                    <textarea class="form-control" name="address" rows="3" placeholder="Enter ...">{{$office->address}}</textarea>
+                </div>
+                </div>
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
+                <a type="submit" href="{{ route('offices.index') }}" class="btn btn-info">Back</a>
                   <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
               </form>

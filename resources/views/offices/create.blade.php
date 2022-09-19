@@ -51,13 +51,14 @@
                     <label for="name">Office Name</label>
                     <input type="text" name="name" class="form-control" placeholder="Enter Name Info">
                   </div>
-                  <div class="form-group">
-                    <label for="address">Address</label>
-                    <input type="text" name="address" class="form-control" placeholder="Enter Address">
-                  </div>
+                <div class="form-group">
+                <label  for="address">Address</label>
+                    <textarea class="form-control" name="address" rows="3" placeholder="Enter ..."></textarea>
+                </div>
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
+                <a type="submit" href="{{ route('offices.index') }}" class="btn btn-info">Back</a>
                   <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
               </form>

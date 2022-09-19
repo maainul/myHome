@@ -69,6 +69,7 @@
 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
+                <a type="submit" href="{{ route('expenses.index') }}" class="btn btn-info">Back</a>
                   <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
               </form>

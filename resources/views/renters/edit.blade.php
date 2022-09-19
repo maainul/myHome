@@ -48,34 +48,50 @@
                 @csrf
                 @method('PUT')
                 <div class="card-body">
+                  <div class="row">
+                <div class="col-md-3">
                   <div class="form-group">
                     <label for="name">Name</label>
                     <input type="text" name="name" value="{{$renter->name}}" class="form-control" placeholder="Enter Name">
                   </div>
+                </div>
+                  <div class="col-md-3">
                   <div class="form-group">
                     <label for="email">Email</label>
                     <input type="text" name="email"  value="{{$renter->email}}" class="form-control" placeholder="Enter Email">
                   </div>
+                  </div>
+                  <div class="col-md-3">
                   <div class="form-group">
                     <label for="fb_id">Address</label>
                     <input type="text" name="fb_id"  value="{{$renter->fb_id}}" class="form-control" placeholder="Enter Facebook ID">
                   </div>
+                  </div>
+                  <div class="col-md-3">
                   <div class="form-group">
                     <label for="phone_1">Phone 1</label>
                     <input type="text" name="phone_1"  value="{{$renter->phone_1}}" class="form-control" placeholder="Enter Phone 1">
                   </div>
+                  </div>
+                  <div class="col-md-3">
                   <div class="form-group">
                     <label for="phone_2">Phone 2</label>
                     <input type="text" name="phone_2"  value="{{$renter->phone_2}}" class="form-control" placeholder="Enter Phone 2">
                   </div>
+                  </div>
+                  <div class="col-md-3">
                   <div class="form-group">
                     <label for="salary">Salary</label>
                     <input type="text" name="salary" value="{{$renter->salary}}" class="form-control" placeholder="Enter Salary">
                   </div>
+                  </div>
+                  <div class="col-md-3">
                   <div class="form-group">
                     <label for="designation">Designation</label>
                     <input type="text" name="designation" value="{{$renter->designation}}" class="form-control" placeholder="Enter designation">
                   </div>
+                  </div>
+                  <div class="col-md-3">
                   <div class="form-group">
                     <label for="gender">Gender</label>
                     <select class="custom-select rounded-0" id="exampleSelectRounded0">
@@ -83,10 +99,14 @@
                     <option value="2">Female</option>
                   </select>
                   </div>
+                  </div>
+                  <div class="col-md-3">
                   <div class="form-group">
                     <label for="nid">NID</label>
                     <input type="text" name="nid" value="{{$renter->nid}}" class="form-control" placeholder="Enter nid">
                   </div>
+                  </div>
+
                   <div class="col-md-3">
                   <div class="form-group">
                     <label for="office_id">Office</label>
@@ -109,19 +129,24 @@
                     </select>
                     </div>
                     </div>
-
+                  <div class="col-md-3">
                   <div class="form-group">
                     <label for="birthdate">Birthdate</label>
                     <input type="date" name="birthdate" value="{{$renter->birthdate}}" class="form-control" placeholder="Enter Birthdate">
                   </div>
+                  </div>
+                  <div class="col-md-12">
                   <div class="form-group">
                     <label  for="address">Textarea</label>
-                        <textarea class="form-control" value="{{$renter->address}}" name="address" rows="3" placeholder="Enter ..."></textarea>
+                        <textarea class="form-control" name="address" rows="3" placeholder="Enter ...">{{$renter->address}}</textarea>
+                  </div>
                   </div>
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
+                <a type="submit" href="{{ route('renters.index') }}" class="btn btn-info">Back</a>
                   <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
                 </div>
               </form>
             </div>

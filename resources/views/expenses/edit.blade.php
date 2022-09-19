@@ -84,15 +84,16 @@
                       <input type="date" name="ex_date" value="{{$expense->ex_date}}" class="form-control" placeholder="Enter date">
                       </div>
                 </div>
-                <div class="col-md-12">
+                <div class="col-md-9">
                   <div class="form-group">
                   <label for="ex_des">Description</label>
-                    <textarea class="form-control" name="ex_des" value="{{$expense->ex_des}}" rows="3" placeholder="Enter ..."></textarea>
+                    <textarea class="form-control" name="ex_des" rows="3" placeholder="Enter ...">{{$expense->ex_des}}</textarea>
                 </div>
                 </div>
                 </div>
                 </div>
                 <div class="card-footer">
+                <a type="submit" href="{{ route('expenses.index') }}" class="btn btn-info">Back</a>
                   <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
               </form>
