@@ -13,13 +13,13 @@ class ExpenseController extends Controller
 
     public function index()
     {
-        // $expenses = Expense::latest()->paginate(5);
         $expenses = DB::table('expenses')
         ->join('expense_types','expense_types.id','=','expenses.expense_type')
         ->join('homes','homes.id','=','expenses.home_id')
         ->select('expenses.*','homes.*','expense_types.*')
         ->get();
-        return view('expenses.index',compact('expenses'))->with('i',(request()->input('page',1)-1)*5);
+        $totalExpense = $total = Expense::sum('amount');
+        return view('expenses.index',compact('expenses','totalExpense'))->with('i',(request()->input('page',1)-1)*5);
     }
 
     public function create()

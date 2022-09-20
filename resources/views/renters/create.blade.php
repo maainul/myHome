@@ -64,31 +64,31 @@
                       <input type="text" name="fb_id" class="form-control" placeholder="Enter Facebook ID">
                       </div>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-4">
                     <div class="form-group">
                     <label for="phone_1">Phone 1</label>
                     <input type="text" name="phone_1" class="form-control" placeholder="Enter Phone 1">
                   </div>
                   </div>
-                  <div class="col-md-3">
+                  <div class="col-md-4">
                   <div class="form-group">
                     <label for="phone_2">Phone 2</label>
                     <input type="text" name="phone_2" class="form-control" placeholder="Enter Phone 2">
                   </div>
                   </div>
-                  <div class="col-md-3">
+                  <div class="col-md-4">
                   <div class="form-group">
                     <label for="salary">Salary</label>
                     <input type="text" name="salary" class="form-control" placeholder="Enter Salary">
                   </div>
                   </div>
-                  <div class="col-md-3">
+                  <div class="col-md-4">
                   <div class="form-group">
                     <label for="designation">Designation</label>
                     <input type="text" name="designation" class="form-control" placeholder="Enter Designation">
                   </div>
                   </div>
-                  <div class="col-md-3">
+                  <div class="col-md-4">
                   <div class="form-group">
                     <label for="gender">Gender</label>
                     <select name="gender" class="custom-select rounded-0" id="exampleSelectRounded0">
@@ -97,13 +97,13 @@
                   </select>
                   </div>
                   </div>
-                  <div class="col-md-3">
+                  <div class="col-md-4">
                   <div class="form-group">
                     <label for="nid">NID</label>
                     <input type="text" name="nid" class="form-control" placeholder="Enter nid">
                   </div>
                   </div>
-                  <div class="col-md-3">
+                  <div class="col-md-4">
                   <div class="form-group">
                     <label for="office_id">Office</label>
                     <select name="office_id" class="custom-select rounded-0" id="exampleSelectRounded0">
@@ -114,13 +114,13 @@
                   </select>
                   </div>
                   </div>
-                  <div class="col-md-3">
+                  <div class="col-md-4">
                   <div class="form-group">
                     <label for="birthdate">Birthdate</label>
                     <input type="date" name="birthdate" class="form-control" placeholder="Enter Birthdate">
                   </div>
                   </div>
-                  <div class="col-md-3">
+                  <div class="col-md-4">
                     <div class="form-group">
                       <label for="home_id">Home</label>
                       <select name="home_id" class="custom-select rounded-0">
@@ -132,10 +132,12 @@
                     </div>
                     </div>
 
-                </div>
-                <div class="form-group">
-                <label  for="address">Address</label>
-                    <textarea class="form-control" name="address" rows="3" placeholder="Enter ..."></textarea>
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label  for="address">Address</label>
+                        <textarea class="form-control" name="address" rows="3" placeholder="Enter ..."></textarea>
+                      </div>
+                    </div>
                 </div>
                 </div>
                 <div class="card-footer">
