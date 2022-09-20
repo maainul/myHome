@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use DB;
 use App\Models\Renter;
 use App\Models\Office;
 use App\Models\Home;
@@ -12,7 +12,13 @@ class RenterController extends Controller
 
     public function index()
     {
-        $renters = Renter::latest()->paginate(5);
+        // $renters = Renter::latest()->paginate(5);
+        $renters = DB::table('renters')
+            ->join('offices', 'renters.office_id', '=', 'offices.id')
+            ->join('homes', 'renters.home_id', '=', 'homes.id')
+            ->select('renters.*', 'offices.office_name', 'homes.home_name')
+            ->get();
+        // dd($renters);
         return view('renters.index',compact('renters'))->with('i',(request()->input('page',1)-1)*5);
     }
 

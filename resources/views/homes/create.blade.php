@@ -49,7 +49,7 @@
                 <div class="card-body">
                   <div class="form-group">
                     <label for="home_number">Home Name</label>
-                    <input type="text" name="name" class="form-control" placeholder="Enter Home Info">
+                    <input type="text" name="home_name" class="form-control" placeholder="Enter Home Info">
                   </div>
                   
                   <div class="form-group">

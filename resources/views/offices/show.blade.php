@@ -38,7 +38,7 @@
           <div class="col-xs-12 col-sm-12 col-md-12">
               <div class="form-group">
                   <strong>Name:</strong>
-                  {{ $office->name }}
+                  {{ $office->office_name }}
               </div>
               <div class="form-group">
                   <strong>Address:</strong>

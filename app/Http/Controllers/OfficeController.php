@@ -37,7 +37,7 @@ class OfficeController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name'=>'required',
+            'office_name'=>'required',
             'address'=>'required',
         ]);
         Office::create($request->all());
@@ -76,7 +76,7 @@ class OfficeController extends Controller
     public function update(Request $request, Office $office)
     {
         $request->validate([
-            'name'=>'required',
+            'office_name'=>'required',
             'address'=>'required',
         ]);
         $office -> update($request->all());

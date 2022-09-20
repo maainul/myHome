@@ -38,7 +38,6 @@
                 <table class="table table-bordered">
                   <thead>
                     <tr>
-                      <th >#</th>
                       <th >Expense Type</th>
                       <th >Expense Name</th>
                       <th >Amount</th>
@@ -50,12 +49,11 @@
                   <tbody>
                   @foreach($expenses as $expense)
                     <tr>
-                      <td>{{ ++$i }}</td>
-                      <td>{{ $expense-> expense_type }}</td>
+                      <td>{{ $expense-> ex_typ_name }}</td>
                       <td>{{ $expense-> expense_name }}</td>
                       <td>{{ $expense-> amount }}</td>
                       <td>{{ $expense-> ex_date }}</td>
-                      <td>{{ $expense-> home_id }}</td>
+                      <td>{{ $expense-> home_name }}</td>
                       <td>
                         <form action="{{ route('expenses.destroy',$expense->id) }}" method="POST">
                             <a class="btn btn-info" href="{{ route('expenses.show',$expense->id) }}">Show</a>
@@ -69,7 +67,6 @@
                   @endforeach
                   </tbody>
                 </table>
-                {!! $expenses->links() !!}
               </div>
             </div>
             

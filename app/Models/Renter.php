@@ -13,6 +13,7 @@ class Renter extends Model
         'fb_id',
         'office_id',
         'home_id',
+        'home_name',
         'phone_1',
         'phone_2',
         'number_of_members',

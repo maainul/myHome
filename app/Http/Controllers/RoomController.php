@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use DB;
 use App\Models\Room;
 use App\Models\Home;
 use App\Models\Floor;
@@ -11,7 +12,11 @@ class RoomController extends Controller
 {
     public function index()
     {
-        $rooms = Room::latest()->paginate(5);
+        // $rooms = Room::latest()->paginate(5);
+        $rooms = DB::table('rooms')
+                ->join('homes','homes.id','=','rooms.home_id')
+                ->select('rooms.*','homes.*')
+                ->get();
         return view('rooms.index',compact('rooms'))->with('i',(request()->input('page',1)-1)*5);
     }
 
@@ -28,7 +33,6 @@ class RoomController extends Controller
             'room_number'=>'required',
             'floor_id'=>'required',
             'home_id'=>'required',
-            'status'=>'required',
         ]);
         Room::create($request->all());
         return redirect()->route('rooms.index')->with('success','Room created successfully.');
@@ -53,7 +57,6 @@ class RoomController extends Controller
             'room_number'=>'required',
             'floor_id'=>'required',
             'home_id'=>'required',
-            'status'=>'required',
         ]);
         $room->update($request->all());
         return redirect()->route('rooms.index')->with('success','Room update successfully');

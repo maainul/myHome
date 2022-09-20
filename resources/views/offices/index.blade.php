@@ -49,7 +49,7 @@
                   @foreach($offices as $office)
                     <tr>
                       <td>{{ ++$i }}</td>
-                      <td>{{ $office-> name }}</td>
+                      <td>{{ $office-> office_name }}</td>
                       <td>{{ $office-> address }}</td>
                       <td>
                         <form action="{{ route('offices.destroy',$office->id) }}" method="POST">

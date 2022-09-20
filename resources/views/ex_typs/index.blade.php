@@ -48,7 +48,7 @@
                   @foreach($ex_typs as $et)
                     <tr>
                       <td>{{ ++$i }}</td>
-                      <td>{{ $et-> name }}</td>
+                      <td>{{ $et-> ex_typ_name }}</td>
                       <td>
                         <form action="{{ route('ex_typs.destroy',$et->id) }}" method="POST">
                             <a class="btn btn-info" href="{{ route('ex_typs.show',$et->id) }}">Show</a>

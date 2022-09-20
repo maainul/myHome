@@ -50,7 +50,7 @@
                 <div class="card-body">
                   <div class="form-group">
                     <label for="name">Office Name</label>
-                    <input type="text" name="name" value="{{$office->name}}"class="form-control" placeholder="Enter Office Name">
+                    <input type="text" name="office_name" value="{{$office->office_name}}"class="form-control" placeholder="Enter Office Name">
                   </div>
                 <div class="form-group">
                 <label  for="address">Address</label>

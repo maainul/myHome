@@ -109,7 +109,7 @@
                     <select name="office_id" class="custom-select rounded-0" id="exampleSelectRounded0">
                     <option value="">-- Office --</option>
                     @foreach ($data as $item)
-                    <option value="{{ $item->id}}">{{ $item->name}}</option>
+                    <option value="{{ $item->id}}">{{ $item->office_name}}</option>
                     @endforeach
                   </select>
                   </div>
@@ -126,7 +126,7 @@
                       <select name="home_id" class="custom-select rounded-0">
                       <option value="">-- Select Home  --</option>
                       @foreach ($home as $item)
-                        <option value="{{ $item->id}}">{{ $item->name}}</option>
+                        <option value="{{ $item->id}}">{{ $item->home_name}}</option>
                       @endforeach
                     </select>
                     </div>

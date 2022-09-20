@@ -50,7 +50,7 @@
                     <tr>
                       <td>{{ ++$i }}</td>
                       <td>{{ $floor-> floor_number }}</td>
-                      <td>{{ $floor-> home_id }}</td>
+                      <td>{{ $floor-> home_name }}</td>
                       <td>
                         <form action="{{ route('floors.destroy',$floor->id) }}" method="POST">
                             <a class="btn btn-info" href="{{ route('floors.show',$floor->id) }}">Show</a>
@@ -64,7 +64,7 @@
                   @endforeach
                   </tbody>
                 </table>
-                {!! $floors->links() !!}
+                
               </div>
             </div>
             

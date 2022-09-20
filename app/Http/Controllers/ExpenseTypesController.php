@@ -37,7 +37,7 @@ class ExpenseTypesController extends Controller
     public function store(Request $request)
     {
         $request-> validate([
-            'name'=> 'required',
+            'ex_typ_name'=> 'required',
         ]);
         ExpenseTypes::create($request->all());
         return redirect()->route('ex_typs.index')->with('success','Expense Type created successfully.');
@@ -75,7 +75,7 @@ class ExpenseTypesController extends Controller
     public function update(Request $request, ExpenseTypes $expenseTypes)
     {
         $request->validate([
-            'name'=>'required',
+            'ex_typ_name'=>'required',
         ]);
         
         $expenseTypes -> update($request->all());

@@ -53,7 +53,7 @@
                   @foreach($rooms as $room)
                     <tr>
                       <td>{{ $room-> floor_id }}</td>
-                      <td>{{ $room-> home_id }}</td>
+                      <td>{{ $room-> home_name}}</td>
                       <td>{{ $room-> room_number }}</td>
                       <td>{{ $room-> gas_bill }}</td>
                       <td>{{ $room-> internet_bill }}</td>
@@ -73,7 +73,6 @@
                   @endforeach
                   </tbody>
                 </table>
-                {!! $rooms->links() !!}
               </div>
             </div>
             

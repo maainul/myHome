@@ -49,8 +49,8 @@
                 @method('PUT')
                 <div class="card-body">
                   <div class="form-group">
-                    <label for="name">Expense Name</label>
-                    <input type="text" name="name" value="{{$expenseTypes->name}}" class="form-control" placeholder="Enter Expense Types Name">
+                    <label for="ex_typ_name">Expense Name</label>
+                    <input type="text" name="ex_typ_name" value="{{$expenseTypes->ex_typ_name}}" class="form-control" placeholder="Enter Expense Types Name">
                   </div>
                 </div>
                 <!-- /.card-body -->

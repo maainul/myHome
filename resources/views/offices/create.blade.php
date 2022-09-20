@@ -49,7 +49,7 @@
                 <div class="card-body">
                   <div class="form-group">
                     <label for="name">Office Name</label>
-                    <input type="text" name="name" class="form-control" placeholder="Enter Name Info">
+                    <input type="text" name="office_name" class="form-control" placeholder="Enter Name Info">
                   </div>
                 <div class="form-group">
                 <label  for="address">Address</label>

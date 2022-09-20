@@ -38,7 +38,6 @@
                 <table class="table table-bordered">
                   <thead>
                     <tr>
-                      <th>#</th>
                       <th>Name</th>
                       <th>Office</th>
                       <th>Phone</th>
@@ -51,11 +50,10 @@
                   <tbody>
                   @foreach($renters as $renter)
                     <tr>
-                      <td>{{ ++$i }}</td>
                       <td>{{ $renter-> name }}</td>
-                      <td>{{ $renter-> office_id }}</td>
+                      <td>{{ $renter-> office_name }}</td>
                       <td>{{ $renter-> phone_1 }}</td>
-                      <td>{{ $renter-> home_id }}</td>
+                      <td>{{ $renter-> home_name }}</td>
                       <td>{{ $renter-> address }}</td>
                       <td>{{ $renter-> status }}</td>
                       <td>
@@ -71,7 +69,7 @@
                   @endforeach
                   </tbody>
                 </table>
-                {!! $renters->links() !!}
+            
               </div>
             </div>
             

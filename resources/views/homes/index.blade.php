@@ -49,7 +49,7 @@
                   @foreach($homes as $home)
                     <tr>
                       <td>{{ ++$i }}</td>
-                      <td>{{ $home-> name }}</td>
+                      <td>{{ $home-> home_name }}</td>
                       <td>{{ $home-> address }}</td>
                       <td>
                         <form action="{{ route('homes.destroy',$home->id) }}" method="POST">

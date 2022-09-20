@@ -48,8 +48,8 @@
                 @csrf
                 <div class="card-body">
                   <div class="form-group">
-                    <label for="name">Expense Type Name</label>
-                    <input type="text" name="name" class="form-control" placeholder="Enter Name Info">
+                    <label for="ex_typ_name">Expense Type Name</label>
+                    <input type="text" name="ex_typ_name" class="form-control" placeholder="Enter Name Info">
                   </div>
                 </div>
                 <!-- /.card-body -->
