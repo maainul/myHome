@@ -55,7 +55,11 @@
                       <td>{{ $renter-> phone_1 }}</td>
                       <td>{{ $renter-> home_name }}</td>
                       <td>{{ $renter-> address }}</td>
-                      <td>{{ $renter-> status }}</td>
+                      @if($renter->status == 1)
+                      <td><span class="badge badge-success">Active</span></td>
+                      @else
+                      <td><span class="badge badge-danger">InActive</span></td>
+                      @endif
                       <td>
                         <form action="{{ route('renters.destroy',$renter->id) }}" method="POST">
                             <a class="btn btn-info" href="{{ route('renters.show',$renter->id) }}">Show</a>
