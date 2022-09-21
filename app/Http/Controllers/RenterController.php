@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use DB;
 use App\Models\Renter;
+use App\Models\Room;
 use App\Models\Office;
 use App\Models\Home;
 use Illuminate\Http\Request;
@@ -26,7 +27,8 @@ class RenterController extends Controller
     {
         $data = Office::all();
         $home = Home::all();
-        return view('renters.create',['data'=>$data,'home'=>$home]);
+        $rms = Room::all();
+        return view('renters.create',['data'=>$data,'home'=>$home,'rms'=>$rms]);
     }
 
     public function store(Request $request)
@@ -50,7 +52,8 @@ class RenterController extends Controller
     {
         $data = Office::all();
         $home = Home::all();
-        return view('renters.edit',compact('renter','data','home'));
+        $rms = Room::all();
+        return view('renters.edit',compact('renter','data','home','rms'));
     }
 
     public function update(Request $request, Renter $renter)

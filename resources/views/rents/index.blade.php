@@ -30,7 +30,7 @@
       <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
         <div class="pull-right">
-            <a class="btn btn-success" href="{{ route('rooms.create') }}"> Create New Room</a>
+            <a class="btn btn-success" href="{{ url('rents/create') }}"> Create New Rent</a>
         </div>
         <div class="row">
           <!-- /.card-header -->
@@ -38,42 +38,31 @@
                 <table class="table table-bordered">
                   <thead>
                     <tr>
-                      <th >Floor</th>
-                      <th >Home</th>
-                      <th >Number</th>
                       <th >Room Rent</th>
+                      <th >Electric Bill</th>
                       <th >Gas Bill</th>
                       <th >Internet Bill</th>
                       <th >Water Bill</th>
-                      <th >Total</th>
                       <th >Status</th>
                       <th >Action</th>
                     </tr>
                   </thead>
                   <tbody>
-                  @foreach($rooms as $room)
+                  @foreach($rents as $rent)
                     <tr>
-                      <td>{{ $room-> floor_number }}</td>
-                      <td>{{ $room-> home_name}}</td>
-                      <td>{{ $room-> room_number }}</td>
-                      <td>{{ $room-> room_rent }}</td>
-                      <td>{{ $room-> gas_bill }}</td>
-                      <td>{{ $room-> internet_bill }}</td>
-                      <td>{{ $room-> water_bill }}</td>
-                      <td>{{ $roomRent }}</td>
-                      @if($room->status == 1)
+                      <td>{{ $rent-> rent_amount }}</td>
+                      <td>{{ $rent-> elct_bill }}</td>
+                      <td>{{ $rent-> gas_bill }}</td>
+                      <td>{{ $rent-> internet_bill }}</td>
+                      <td>{{ $rent-> water_bill }}</td>
+                      @if($rents->status == 1)
                       <td><span class="badge badge-success">Rent</span></td>
                       @else
                       <td><span class="badge badge-danger">No Rent</span></td>
                       @endif
                       <td>
-                        <form action="{{ route('rooms.destroy',$room->id) }}" method="POST">
-                            <a class="btn btn-info" href="{{ route('rooms.show',$room->id) }}">Show</a>
-                            <a class="btn btn-primary" href="{{ route('rooms.edit',$room->id) }}">Edit</a>
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn btn-danger">Delete</button>
-                        </form>
+                            <a class="btn btn-info" href="">Show</a>
+                            <a class="btn btn-primary" href="">Edit</a>
                       </td>
                     </tr>
                   @endforeach

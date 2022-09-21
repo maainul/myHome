@@ -129,15 +129,32 @@
                     </select>
                     </div>
                     </div>
+                    <div class="col-md-3">
+                    <div class="form-group">
+                      <label for="home_id">Rooms</label>
+                      <select name="home_id" class="custom-select rounded-0">
+                      <option value="">-- Select Rooms--</option>
+                      @foreach($rms as $hd)
+                      <option value="{{ $hd->id }}" {{$renter->room_id == $hd->id  ? 'selected' : ''}}>{{ $hd->room_number}}</option>
+                      @endforeach
+                    </select>
+                    </div>
+                    </div>
                   <div class="col-md-3">
                   <div class="form-group">
                     <label for="birthdate">Birthdate</label>
                     <input type="date" name="birthdate" value="{{$renter->birthdate}}" class="form-control" placeholder="Enter Birthdate">
                   </div>
                   </div>
-                  <div class="col-md-12">
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label for="rent_from">Rent From Date</label>
+                      <input type="date" name="rent_from" value="{{$renter->rent_from}}" class="form-control" placeholder="Enter Rent From Date">
+                    </div>
+                    </div>
+                  <div class="col-md-4">
                   <div class="form-group">
-                    <label  for="address">Textarea</label>
+                    <label  for="address">Address</label>
                         <textarea class="form-control" name="address" rows="3" placeholder="Enter ...">{{$renter->address}}</textarea>
                   </div>
                   </div>

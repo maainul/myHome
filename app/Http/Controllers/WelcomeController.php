@@ -10,12 +10,13 @@ class WelcomeController extends Controller
 {
     public function index()
     {
-        $totalExpense = $total = Expense::sum('amount');
+        $totalExpense = Expense::sum('amount');
         $totalRoom = Room::count(); 
         $totalNonRentRoom = Room::count(); 
         $totalRenter = Renter::count(); 
+        $totalActiveRenter = Renter::where('status','1')->count(); 
         $totalMaleRenter=Renter::where('gender','1')->count();
         $totalFemaleRenter=Renter::where('gender','2')->count();
-        return view('welcome.index',compact('totalExpense','totalRoom','totalRenter','totalMaleRenter','totalFemaleRenter','totalNonRentRoom'));
+        return view('welcome.index',compact('totalExpense','totalRoom','totalRenter','totalActiveRenter','totalMaleRenter','totalFemaleRenter','totalNonRentRoom'));
     }
 }

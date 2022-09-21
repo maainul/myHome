@@ -12,12 +12,13 @@ class RoomController extends Controller
 {
     public function index()
     {
-        // $rooms = Room::latest()->paginate(5);
         $rooms = DB::table('rooms')
                 ->join('homes','homes.id','=','rooms.home_id')
-                ->select('rooms.*','homes.*')
+                ->join('floors','floors.id','=','rooms.floor_id')
+                ->select('rooms.*','homes.*','floors.*')
                 ->get();
-        return view('rooms.index',compact('rooms'))->with('i',(request()->input('page',1)-1)*5);
+        $roomRent = Room::sum('room_rent');
+        return view('rooms.index',compact('rooms','roomRent'))->with('i',(request()->input('page',1)-1)*5);
     }
 
     public function create()
@@ -31,12 +32,12 @@ class RoomController extends Controller
     {
         $request->validate([
             'room_number'=>'required',
+            'room_rent'=>'required',
             'floor_id'=>'required',
             'home_id'=>'required',
         ]);
         Room::create($request->all());
         return redirect()->route('rooms.index')->with('success','Room created successfully.');
-
     }
 
     public function show(Room $room)
@@ -55,6 +56,7 @@ class RoomController extends Controller
     {
         $request->validate([
             'room_number'=>'required',
+            'room_rent'=>'required',
             'floor_id'=>'required',
             'home_id'=>'required',
         ]);

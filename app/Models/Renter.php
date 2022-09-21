@@ -23,6 +23,7 @@ class Renter extends Model
         'gender',
         'nid',
         'birthdate',
+        'rent_from',
         'status'
     ];
     // public function office(){

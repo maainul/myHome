@@ -40,84 +40,59 @@
             <!-- jquery validation -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Edit Room Information</h3>
+                <h3 class="card-title">Add Rent Information</h3>
               </div>
-              <form action="{{ route('rooms.update',$room->id) }}" method="POST">
-                @csrf
-                @method('PUT')
+              <form action="{{ url('rents/create') }}" method="POST">
+              @csrf
                 <div class="card-body">
                   <div class="row">
-                  <div class="col-md-3">
-                  <div class="form-group">
-                    <label for="floor_id">Floor</label>
-                    <select name="floor_id" class="custom-select rounded-0" id="exampleSelectRounded0">
-                    <option value="">-- Floor --</option>
-                    @foreach($data as $item)
-                      <option value="{{ $item->id }}" {{$room->floor_id == $item->id  ? 'selected' : ''}}>{{ $item->floor_number}}</option>
-                    @endforeach
-                  </select>
-                  </div>
-                  </div>
-                  <div class="col-md-3">
-                    <div class="form-group">
-                      <label for="home_id">Home</label>
-                      <select name="home_id" class="custom-select rounded-0">
-                      <option value="">-- Select Home  --</option>
-                      @foreach($home as $item)
-                      <option value="{{ $item->id }}" {{$room->home_id == $item->id  ? 'selected' : ''}}>{{ $item->home_name}}</option>
-                      @endforeach
-                    </select>
-                    </div>
-                    </div>
-
                     <div class="col-md-3">
                       <div class="form-group">
-                        <label for="room_number">Room Number</label>
-                        <input type="text" name="room_number" class="form-control" value="{{$room->room_number}}" placeholder="Enter Room Number">
+                        <label for="room_rent">Room Rent</label>
+                        <input type="number" name="room_rent" class="form-control" placeholder="Enter Room Rent">
                       </div>
                     </div>
                     <div class="col-md-3">
                       <div class="form-group">
-                        <label for="room_rent">Room Rent</label>
-                        <input type="number" name="room_rent" value="{{$room->room_rent}}" class="form-control" placeholder="Enter Room Rent">
+                        <label for="elct_bil">Electric Bill</label>
+                        <input type="number" name="elct_bill" class="form-control" placeholder="Enter Room Rent">
                       </div>
                     </div>
                     <div class="col-md-3">
                       <div class="form-group">
                         <label for="gas_bill">Gas Bill</label>
-                        <input type="number" name="gas_bill" class="form-control" value="{{$room->gas_bill}}" placeholder="Enter Gas Bill">
+                        <input type="number" name="gas_bill" class="form-control" placeholder="Enter Gas Bill">
                       </div>
                     </div>
                     <div class="col-md-3">
                       <div class="form-group">
                       <label for="internet_bill">Internet Bill</label>
-                      <input type="number" name="internet_bill" class="form-control" value="{{$room->internet_bill}}" placeholder="Enter Internet Bill">
+                      <input type="number" name="internet_bill" class="form-control" placeholder="Enter Internet Bill">
                       </div>
                     </div>
                     <div class="col-md-3">
                     <div class="form-group">
                     <label for="dish_bill">Dish Bill</label>
-                    <input type="number" name="dish_bill" class="form-control" value="{{$room->dish_bill}}" placeholder="Enter Dish Bill">
+                    <input type="number" name="dish_bill" class="form-control" placeholder="Enter Dish Bill">
                   </div>
                   </div>
                   <div class="col-md-3">
                   <div class="form-group">
                     <label for="water_bill">Water Bill</label>
-                    <input type="number" name="water_bill" class="form-control" value="{{$room->water_bill}}" placeholder="Enter Water Bill">
+                    <input type="number" name="water_bill" class="form-control" placeholder="Enter Water Bill">
                   </div>
                   </div>
                   <div class="col-md-3">
                   <div class="form-group">
                     <label for="dust_bill">Dust Bill</label>
-                    <input type="number" name="dust_bill" class="form-control" value="{{$room->dust_bill}}" placeholder="Enter Dust Bill">
+                    <input type="number" name="dust_bill" class="form-control" placeholder="Enter Dust Bill">
                   </div>
                   </div>
                 </div>
                 <div class="card-footer">
-                  <a class="btn btn-primary" href="{{ route('rooms.index') }}"> Back</a>
+                  <a type="submit" href="{{ url('rents') }}" class="btn btn-info">Back</a>
                   <button type="submit" class="btn btn-success">Submit</button>
                 </div>
-               
               </form>
             </div>
             </div>

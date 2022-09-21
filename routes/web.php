@@ -13,6 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/','WelcomeController@index');
+Route::get('/rents','RentController@index');
+Route::get('/rents/create','RentController@create');
+Route::post('/rents/create','RentController@store');
 Route::resource('floors','FloorController');
 Route::resource('offices','OfficeController');
 Route::resource('renters','RenterController');

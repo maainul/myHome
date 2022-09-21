@@ -10,7 +10,6 @@ class FloorController extends Controller
 {
     public function index()
     {
-        // $floors = Floor::latest()->paginate(5);
         $floors = DB::table('floors')
                 ->join('homes','homes.id','=','floors.home_id')
                 ->select('floors.*','homes.*')

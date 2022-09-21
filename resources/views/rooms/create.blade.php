@@ -68,12 +68,17 @@
                     </select>
                     </div>
                     </div>
-
-
+                    
                     <div class="col-md-3">
                       <div class="form-group">
                         <label for="room_number">Room Number</label>
                         <input type="text" name="room_number" class="form-control" placeholder="Enter Room Number">
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="form-group">
+                        <label for="room_rent">Room Rent</label>
+                        <input type="number" name="room_rent" class="form-control" placeholder="Enter Room Rent">
                       </div>
                     </div>
                     <div class="col-md-3">

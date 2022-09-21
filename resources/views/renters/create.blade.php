@@ -90,13 +90,11 @@
                   </div>
                   <div class="col-md-4">
                   <div class="form-group">
-                    <label for="gender">Gender</label>
-                    <select name="gender" class="custom-select rounded-0" id="exampleSelectRounded0">
-                    <option value="1">Male</option>
-                    <option value="2">Female</option>
-                  </select>
+                    <label for="birthdate">Birthdate</label>
+                    <input type="date" name="birthdate" class="form-control" placeholder="Enter Birthdate">
                   </div>
                   </div>
+                  
                   <div class="col-md-4">
                   <div class="form-group">
                     <label for="nid">NID</label>
@@ -114,12 +112,30 @@
                   </select>
                   </div>
                   </div>
+
                   <div class="col-md-4">
                   <div class="form-group">
-                    <label for="birthdate">Birthdate</label>
-                    <input type="date" name="birthdate" class="form-control" placeholder="Enter Birthdate">
+                    <label for="office_id">Rooms</label>
+                    <select name="office_id" class="custom-select rounded-0" id="exampleSelectRounded0">
+                    <option value="">-- Rooms --</option>
+                    @foreach ($rms as $item)
+                    <option value="{{ $item->id}}">{{ $item->room_number}}</option>
+                    @endforeach
+                  </select>
                   </div>
                   </div>
+
+                  <div class="col-md-4">
+                  <div class="form-group">
+                    <label for="gender">Gender</label>
+                    <select name="gender" class="custom-select rounded-0" id="exampleSelectRounded0">
+                    <option value="">--Gender--</option>
+                    <option value="1">Male</option>
+                    <option value="2">Female</option>
+                  </select>
+                  </div>
+                  </div>
+
                   <div class="col-md-4">
                     <div class="form-group">
                       <label for="home_id">Home</label>
@@ -131,8 +147,13 @@
                     </select>
                     </div>
                     </div>
-
-                    <div class="col-md-12">
+                    <div class="col-md-4">
+                    <div class="form-group">
+                      <label for="rent_from">Rent From Date</label>
+                      <input type="date" name="rent_from" class="form-control" placeholder="Enter Rent From Date">
+                    </div>
+                    </div>
+                    <div class="col-md-4">
                       <div class="form-group">
                         <label  for="address">Address</label>
                         <textarea class="form-control" name="address" rows="3" placeholder="Enter ..."></textarea>
