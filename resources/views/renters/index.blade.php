@@ -38,11 +38,11 @@
                 <table class="table table-bordered">
                   <thead>
                     <tr>
+                      <th>Image</th>
                       <th>Name</th>
                       <th>Office</th>
                       <th>Phone</th>
                       <th>Home</th>
-                      <th>Address</th>
                       <th>Status</th>
                       <th>Action</th>
                     </tr>
@@ -50,11 +50,15 @@
                   <tbody>
                   @foreach($renters as $renter)
                     <tr>
+                      @if(!empty($renter->renter_image))
+                      <td style="width: 20%"><img class="img-rounded w-100 h-100" height src="{{ asset('public/image/'.$renter->renter_image) }}" title="Renter image"></td>
+                      @else
+                      <td style="width: 20%"><img class="img-rounded w-100 h-100" height src="{{ asset('public/image/'.'deff.png') }}"></td>
+                      @endif
                       <td>{{ $renter-> name }}</td>
                       <td>{{ $renter-> office_name }}</td>
                       <td>{{ $renter-> phone_1 }}</td>
                       <td>{{ $renter-> home_name }}</td>
-                      <td>{{ $renter-> address }}</td>
                       @if($renter->status == 1)
                       <td><span class="badge badge-success">Active</span></td>
                       @else

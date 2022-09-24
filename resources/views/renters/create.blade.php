@@ -42,10 +42,16 @@
               <div class="card-header">
                 <h3 class="card-title">Add Renter Information</h3>
               </div>
-              <form action="{{ route('renters.store') }}" method="POST">
+              <form action="{{ route('renters.store') }}" method="POST" enctype="multipart/form-data">
               @csrf
                 <div class="card-body">
                   <div class="row">
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <label for="renter_image">Renter Image</label>
+                        <input type="file" name="renter_image" class="form-control" placeholder="Enter Image">
+                      </div>
+                    </div>
                     <div class="col-md-4">
                       <div class="form-group">
                         <label for="name">Name</label>
@@ -79,7 +85,7 @@
                   <div class="col-md-4">
                   <div class="form-group">
                     <label for="salary">Salary</label>
-                    <input type="text" name="salary" class="form-control" placeholder="Enter Salary">
+                    <input type="number" name="salary" class="form-control" placeholder="Enter Salary">
                   </div>
                   </div>
                   <div class="col-md-4">
@@ -98,7 +104,7 @@
                   <div class="col-md-4">
                   <div class="form-group">
                     <label for="nid">NID</label>
-                    <input type="text" name="nid" class="form-control" placeholder="Enter nid">
+                    <input type="number" name="nid" class="form-control" placeholder="Enter nid">
                   </div>
                   </div>
                   <div class="col-md-4">

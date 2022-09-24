@@ -9,6 +9,7 @@ class Renter extends Model
 {
     protected $fillable = [   
         'name',
+        'renter_image',
         'email',
         'fb_id',
         'office_id',
@@ -24,9 +25,5 @@ class Renter extends Model
         'nid',
         'birthdate',
         'rent_from',
-        'status'
     ];
-    // public function office(){
-    //     return $this->belongsTo(Post::class);
-    // }
 }

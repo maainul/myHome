@@ -15,7 +15,7 @@ class CreateRentersTable extends Migration
     {
         Schema::create('renters', function (Blueprint $table) {
             $table->id();
-            // $table->integer('office_id')->unsigned();
+            $table->text("renter_image");
             $table->string("name");
             $table->string("email");
             $table->string("fb_id");
@@ -32,7 +32,6 @@ class CreateRentersTable extends Migration
             $table->date('rent_from');
             $table->tinyInteger('status')->default('1');
             $table->timestamps();
-            // $table->foreignId('office_id')->constrained('offices');
         });
     }
 

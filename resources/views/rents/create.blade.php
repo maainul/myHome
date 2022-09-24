@@ -77,6 +77,18 @@
                   </div>
                   </div>
                   <div class="col-md-3">
+                    <div class="form-group">
+                    <label for="rent_month">Rent Month</label>
+                    <input type="date" name="rent_month" class="form-control" placeholder="Enter Rent Month">
+                  </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="form-group">
+                    <label for="rent_given_date">Rent Given Date</label>
+                    <input type="date" name="rent_given_date" class="form-control" placeholder="Enter Rent Month">
+                  </div>
+                  </div>
+                  <div class="col-md-3">
                   <div class="form-group">
                     <label for="water_bill">Water Bill</label>
                     <input type="number" name="water_bill" class="form-control" placeholder="Enter Water Bill">
