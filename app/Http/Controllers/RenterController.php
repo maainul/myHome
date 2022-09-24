@@ -42,6 +42,8 @@ class RenterController extends Controller
         $person  = new Renter ;
         $person->name = $request->name;
         $person->email = $request->email;
+        $person->e_back = $request->e_back;
+        $person->notes = $request->notes;
         $person->fb_id = $request->fb_id;
         $person->home_id = $request->home_id;
         $person->phone_1 = $request->phone_1;

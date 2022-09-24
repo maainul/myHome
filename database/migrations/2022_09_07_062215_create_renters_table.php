@@ -17,6 +17,8 @@ class CreateRentersTable extends Migration
             $table->id();
             $table->text("renter_image");
             $table->string("name");
+            $table->string("e_back");
+            $table->string("notes");
             $table->string("email");
             $table->string("fb_id");
             $table->Integer('home_id');

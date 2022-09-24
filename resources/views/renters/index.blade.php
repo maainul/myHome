@@ -51,9 +51,9 @@
                   @foreach($renters as $renter)
                     <tr>
                       @if(!empty($renter->renter_image))
-                      <td style="width: 20%"><img class="img-rounded w-100 h-100" height src="{{ asset('public/image/'.$renter->renter_image) }}" title="Renter image"></td>
+                      <td style="width: 20%"><img class="img-rounded w-100 h-100" src="{{ asset('public/image/'.$renter->renter_image) }}" title="Renter image"></td>
                       @else
-                      <td style="width: 20%"><img class="img-rounded w-100 h-100" height src="{{ asset('public/image/'.'deff.png') }}"></td>
+                      <td style="width: 20%"><img class="img-rounded w-100 h-100" src="{{ asset('public/image/'.'deff.png') }}"></td>
                       @endif
                       <td>{{ $renter-> name }}</td>
                       <td>{{ $renter-> office_name }}</td>

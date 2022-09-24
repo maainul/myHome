@@ -107,6 +107,14 @@
                     <input type="number" name="nid" class="form-control" placeholder="Enter nid">
                   </div>
                   </div>
+
+                  <div class="col-md-4">
+                  <div class="form-group">
+                    <label for="e_back">Educational Background</label>
+                    <input type="text" name="e_back" class="form-control" placeholder="Enter Educational Background">
+                  </div>
+                  </div>
+
                   <div class="col-md-4">
                   <div class="form-group">
                     <label for="office_id">Office</label>
@@ -163,6 +171,12 @@
                       <div class="form-group">
                         <label  for="address">Address</label>
                         <textarea class="form-control" name="address" rows="3" placeholder="Enter ..."></textarea>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <label  for="notes">Notes</label>
+                        <textarea class="form-control" name="notes" rows="3" placeholder="Enter ..."></textarea>
                       </div>
                     </div>
                 </div>
