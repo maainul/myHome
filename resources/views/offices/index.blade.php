@@ -53,11 +53,11 @@
                       <td>{{ $office-> address }}</td>
                       <td>
                         <form action="{{ route('offices.destroy',$office->id) }}" method="POST">
-                            <a class="btn btn-info" href="{{ route('offices.show',$office->id) }}">Show</a>
-                            <a class="btn btn-primary" href="{{ route('offices.edit',$office->id) }}">Edit</a>
+                            <a class="btn btn-sm btn-info" href="{{ route('offices.show',$office->id) }}">Show</a>
+                            <a class="btn btn-sm btn-primary" href="{{ route('offices.edit',$office->id) }}">Edit</a>
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-danger">Delete</button>
+                            <button type="submit" class="btn btn-sm btn-danger">Delete</button>
                         </form>
                       </td>
                     </tr>

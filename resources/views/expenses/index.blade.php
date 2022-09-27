@@ -56,11 +56,11 @@
                       <td>{{ $expense-> home_name }}</td>
                       <td>
                         <form action="{{ route('expenses.destroy',$expense->id) }}" method="POST">
-                            <a class="btn btn-info" href="{{ route('expenses.show',$expense->id) }}">Show</a>
-                            <a class="btn btn-primary" href="{{ route('expenses.edit',$expense->id) }}">Edit</a>
+                            <a class="btn btn-sm btn-info" href="{{ route('expenses.show',$expense->id) }}">Show</a>
+                            <a class="btn btn-sm btn-primary" href="{{ route('expenses.edit',$expense->id) }}">Edit</a>
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-danger">Delete</button>
+                            <button type="submit" class="btn btn-sm btn-danger">Delete</button>
                         </form>
                       </td>
                     </tr>

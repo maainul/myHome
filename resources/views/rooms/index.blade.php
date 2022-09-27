@@ -38,14 +38,13 @@
                 <table class="table table-bordered">
                   <thead>
                     <tr>
-                      <th >Floor</th>
                       <th >Home</th>
-                      <th >Number</th>
+                      <th >Floor</th>
+                      <th >Room Number</th>
                       <th >Room Rent</th>
-                      <th >Gas Bill</th>
                       <th >Internet Bill</th>
-                      <th >Water Bill</th>
-                      <th >Total</th>
+                      <th >Total Rent</th>
+                      <th >Total Members</th>
                       <th >Status</th>
                       <th >Action</th>
                     </tr>
@@ -57,22 +56,21 @@
                       <td>{{ $room-> home_name}}</td>
                       <td>{{ $room-> room_number }}</td>
                       <td>{{ $room-> room_rent }}</td>
-                      <td>{{ $room-> gas_bill }}</td>
                       <td>{{ $room-> internet_bill }}</td>
-                      <td>{{ $room-> water_bill }}</td>
                       <td>{{ $roomRent }}</td>
+                      <td>{{ $room-> gas_bill }}</td>
                       @if($room->status == 1)
-                      <td><span class="badge badge-success">Rent</span></td>
+                        <td><span class="badge badge-success">Rent</span></td>
                       @else
-                      <td><span class="badge badge-danger">No Rent</span></td>
+                        <td><span class="badge badge-danger">No Rent</span></td>
                       @endif
                       <td>
                         <form action="{{ route('rooms.destroy',$room->id) }}" method="POST">
-                            <a class="btn btn-info" href="{{ route('rooms.show',$room->id) }}">Show</a>
-                            <a class="btn btn-primary" href="{{ route('rooms.edit',$room->id) }}">Edit</a>
+                            <a class="btn btn-info btn-sm" href="{{ route('rooms.show',$room->id) }}">Show</a>
+                            <a class="btn btn-primary btn-sm" href="{{ route('rooms.edit',$room->id) }}">Edit</a>
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-danger">Delete</button>
+                            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
                         </form>
                       </td>
                     </tr>

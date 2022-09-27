@@ -25,24 +25,25 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-3">
-
+          @foreach($renter as $rnts)
             <!-- Profile Image -->
             <div class="card card-primary card-outline">
               <div class="card-body box-profile">
                 <div class="text-center">
                   <img class="profile-user-img img-fluid img-circle"
-                       src="{{ asset('public/image/'.$renter->renter_image) }}"
+                       src="{{ asset('public/image/'.$rnts->renter_image) }}"
                        alt="User profile picture">
                 </div>
-                <h3 class="profile-username text-center">{{$renter->name}}</h3>
-                <p class="text-muted text-center">{{$renter->designation}}</p>
+                
+                <h3 class="profile-username text-center">{{$rnts->name}}</h3>
+                <p class="text-muted text-center">{{$rnts->designation}}</p>
                 <ul class="list-group list-group-unbordered mb-3">
                   <li class="list-group-item">
-                   <a class="float-left">{{$renter->phone_1}}</a>
-                   <a class="float-left">{{$renter->phone_2}}</a>
+                   <a class="float-left">{{$rnts->phone_1}}</a>
+                   <a class="float-left">{{$rnts->phone_2}}</a>
                   </li>
                   <li class="list-group-item">
-                    <a class="float-left">{{$renter->email}}</a>
+                    <a class="float-left">{{$rnts->email}}</a>
                   </li>
                 </ul>
                 <a href="#" class="btn btn-primary btn-block"><b>Rent Info</b></a>
@@ -54,40 +55,42 @@
             <!-- About Me Box -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">About <strong>{{$renter->name}}</strong></h3>
+                <h3 class="card-title">About <strong>{{$rnts->name}}</strong></h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
                 <strong><i class="fas fa-book mr-1"></i> Education</strong>
 
                 <p class="text-muted">
-                  B.S. in Computer Science from the University of Tennessee at Knoxville
+                  {{$rnts->e_back}}
                 </p>
-
-                <hr>
-
-                <strong><i class="fas fa-map-marker-alt mr-1"></i> Location</strong>
-                <p class="text-muted">{{$renter->address}}</p>
-                <hr>
-                <strong><i class="fas fa-pencil-alt mr-1"></i> Rent From</strong>
-                <p class="text-muted">{{$renter->rent_from}}</p>
                 <hr>
                 <strong><i class="fas fa-pencil-alt mr-1"></i> Salary</strong>
-                <p class="text-muted">{{$renter->salary}}</p>
+                <p class="text-muted">{{$rnts->salary}}</p>
+                <hr>
+                <strong><i class="fas fa-pencil-alt mr-1"></i> Home Name</strong>
+                <p class="text-muted">{{$rnts->home_name}}</p>
+                <hr>
+                <strong><i class="fas fa-pencil-alt mr-1"></i>Room Rent</strong>
+                <p class="text-muted">{{$rnts->room_rent}}</p>
+                <hr>
+                <strong><i class="fas fa-pencil-alt mr-1"></i>Floor</strong>
+                <p class="text-muted">{{$floor->floor_number}}</p>
                 <hr>
                 <strong><i class="fas fa-pencil-alt mr-1"></i> NID</strong>
-                <p class="text-muted">{{$renter->nid}}</p>
+                <p class="text-muted">{{$rnts->nid}}</p>
                 <hr>
                 <strong><i class="fas fa-pencil-alt mr-1"></i> Gender</strong>
-                @if($renter->status == 1)
+                @if($rnts->status == 1)
                   <p class="text-muted">Male</p>
                 @else
                   <p class="text-muted">Female</p>
                 @endif
                 <hr>
                 <strong><i class="far fa-file-alt mr-1"></i> Notes</strong>
-                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fermentum enim neque.</p>
+                <p class="text-muted">{{$rnts->notes}}</p>
               </div>
+              @endforeach
               <!-- /.card-body -->
             </div>
             <!-- /.card -->
@@ -105,117 +108,127 @@
               <div class="card-body">
                 <div class="tab-content">
                   <div class="active tab-pane" id="activity">
-                    <!-- Post -->
-                    <div class="post">
-                      <div class="user-block">
-                        <img class="img-circle img-bordered-sm" src="../../dist/img/user1-128x128.jpg" alt="user image">
-                        <span class="username">
-                          <a href="#">Jonathan Burke Jr.</a>
-                          <a href="#" class="float-right btn-tool"><i class="fas fa-times"></i></a>
-                        </span>
-                        <span class="description">Shared publicly - 7:30 PM today</span>
-                      </div>
-                      <!-- /.user-block -->
-                      <p>
-                        Lorem ipsum represents a long-held tradition for designers,
-                        typographers and the like. Some people hate it and argue for
-                        its demise, but others ignore the hate as they create awesome
-                        tools to help create filler text for everyone from bacon lovers
-                        to Charlie Sheen fans.
-                      </p>
 
-                      <p>
-                        <a href="#" class="link-black text-sm mr-2"><i class="fas fa-share mr-1"></i> Share</a>
-                        <a href="#" class="link-black text-sm"><i class="far fa-thumbs-up mr-1"></i> Like</a>
-                        <span class="float-right">
-                          <a href="#" class="link-black text-sm">
-                            <i class="far fa-comments mr-1"></i> Comments (5)
-                          </a>
-                        </span>
-                      </p>
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <!-- Main content -->
+            <div class="invoice p-3 mb-3">
+              <!-- title row -->
+              <div class="row">
+                <div class="col-12">
+                  <h4>
+                    <i class="fas fa-globe"></i>{{$floor->floor_number}}-{{$rnts->room_number}}
+                    <small id="current_date" class="float-right"></small>
+                  </h4>
+                </div>
+                <!-- /.col -->
+              </div>
+              <!-- info row -->
+              <div class="row invoice-info">
+                <div class="col-sm-6 invoice-col">
+                  <address>
+                    <strong>{{$rnts->name}}</strong><br>
+                    {{$rnts->address}}<br>
+                    Phone: {{$rnts->phone_1}}<br>
+                    Email: {{$rnts->email}}
+                  </address>
+                </div>
+                <!-- /.col -->
+                <!-- /.col -->
+                <div class="col-sm-6 invoice-col">
+                  <b>Rent From : {{$rnts->rent_from}}</b><br>
+                  <b>Last Payment Month :</b> {{$rnts->rent_from}}<br>
+                  <b>Payment Due:</b> 200<br>
+                  <b>Account:</b> 968-34567
+                </div>
+                <!-- /.col -->
+              </div>
+              <!-- /.row -->
 
-                      <input class="form-control form-control-sm" type="text" placeholder="Type a comment">
-                    </div>
-                    <!-- /.post -->
+              <!-- Table row -->
+              <div class="row">
+                <div class="col-12 table-responsive">
+                  <table class="table table-striped">
+                    <thead>
+                    <tr>
+                      <th>Qty</th>
+                      <th>Month</th>
+                      <th>Given date #</th>
+                      <th>Subtotal</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                   
+                    <tr>
+                      <td>1</td>
+                      <td>22-7-2022</td>
+                      <td>422-568-642</td>
+                      <td>$25.99</td>
+                    </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <!-- /.col -->
+              </div>
+              <!-- /.row -->
 
-                    <!-- Post -->
-                    <div class="post clearfix">
-                      <div class="user-block">
-                        <img class="img-circle img-bordered-sm" src="../../dist/img/user7-128x128.jpg" alt="User Image">
-                        <span class="username">
-                          <a href="#">Sarah Ross</a>
-                          <a href="#" class="float-right btn-tool"><i class="fas fa-times"></i></a>
-                        </span>
-                        <span class="description">Sent you a message - 3 days ago</span>
-                      </div>
-                      <!-- /.user-block -->
-                      <p>
-                        Lorem ipsum represents a long-held tradition for designers,
-                        typographers and the like. Some people hate it and argue for
-                        its demise, but others ignore the hate as they create awesome
-                        tools to help create filler text for everyone from bacon lovers
-                        to Charlie Sheen fans.
-                      </p>
+              <div class="row">
+                <!-- accepted payments column -->
+                <div class="col-6">
+                  <p class="lead">Payment Methods:</p>
+                  <img src="../../dist/img/credit/visa.png" alt="Visa">
+                  <img src="../../dist/img/credit/american-express.png" alt="American Express">
+                  <img src="../../dist/img/credit/paypal2.png" alt="Paypal">
+                </div>
+                <!-- /.col -->
+                <div class="col-6">
+                  <p class="lead">Amount Due 2033</p>
 
-                      <form class="form-horizontal">
-                        <div class="input-group input-group-sm mb-0">
-                          <input class="form-control form-control-sm" placeholder="Response">
-                          <div class="input-group-append">
-                            <button type="submit" class="btn btn-danger">Send</button>
-                          </div>
-                        </div>
-                      </form>
-                    </div>
-                    <!-- /.post -->
+                  <div class="table-responsive">
+                    <table class="table">
+                      <tr>
+                        <th style="width:50%">Total Rent:</th>
+                        <td>$250.30</td>
+                      </tr>
+                      <tr>
+                        <th>Tax (9.3%)</th>
+                        <td>$10.34</td>
+                      </tr>
+                      <tr>
+                        <th>Due:</th>
+                        <td>$5.80</td>
+                      </tr>
+                      <tr>
+                        <th>Subtotal:</th>
+                        <td>$265.24</td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+                <!-- /.col -->
+              </div>
+              <!-- /.row -->
 
-                    <!-- Post -->
-                    <div class="post">
-                      <div class="user-block">
-                        <img class="img-circle img-bordered-sm" src="../../dist/img/user6-128x128.jpg" alt="User Image">
-                        <span class="username">
-                          <a href="#">Adam Jones</a>
-                          <a href="#" class="float-right btn-tool"><i class="fas fa-times"></i></a>
-                        </span>
-                        <span class="description">Posted 5 photos - 5 days ago</span>
-                      </div>
-                      <!-- /.user-block -->
-                      <div class="row mb-3">
-                        <div class="col-sm-6">
-                          <img class="img-fluid" src="../../dist/img/photo1.png" alt="Photo">
-                        </div>
-                        <!-- /.col -->
-                        <div class="col-sm-6">
-                          <div class="row">
-                            <div class="col-sm-6">
-                              <img class="img-fluid mb-3" src="../../dist/img/photo2.png" alt="Photo">
-                              <img class="img-fluid" src="../../dist/img/photo3.jpg" alt="Photo">
-                            </div>
-                            <!-- /.col -->
-                            <div class="col-sm-6">
-                              <img class="img-fluid mb-3" src="../../dist/img/photo4.jpg" alt="Photo">
-                              <img class="img-fluid" src="../../dist/img/photo1.png" alt="Photo">
-                            </div>
-                            <!-- /.col -->
-                          </div>
-                          <!-- /.row -->
-                        </div>
-                        <!-- /.col -->
-                      </div>
-                      <!-- /.row -->
-
-                      <p>
-                        <a href="#" class="link-black text-sm mr-2"><i class="fas fa-share mr-1"></i> Share</a>
-                        <a href="#" class="link-black text-sm"><i class="far fa-thumbs-up mr-1"></i> Like</a>
-                        <span class="float-right">
-                          <a href="#" class="link-black text-sm">
-                            <i class="far fa-comments mr-1"></i> Comments (5)
-                          </a>
-                        </span>
-                      </p>
-
-                      <input class="form-control form-control-sm" type="text" placeholder="Type a comment">
-                    </div>
-                    <!-- /.post -->
+              <!-- this row will not appear when printing -->
+              <div class="row no-print">
+                <div class="col-12">
+                  <a href="invoice-print.html" rel="noopener" target="_blank" class="btn btn-default"><i class="fas fa-print"></i> Print</a>
+                  <button type="button" class="btn btn-success float-right"><i class="far fa-credit-card"></i> Submit
+                    Payment
+                  </button>
+                  <button type="button" class="btn btn-primary float-right" style="margin-right: 5px;">
+                    <i class="fas fa-download"></i> Generate PDF
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- /.invoice -->
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </section>
                   </div>
                   <!-- /.tab-pane -->
                   <div class="tab-pane" id="timeline">
@@ -376,5 +389,12 @@
     </section>
     <!-- /.content -->
   </div>
+  <script>
+  date = new Date();
+  year = date.getFullYear();
+  month = date.getMonth() + 1;
+  day = date.getDate();
+  document.getElementById("current_date").innerHTML = day + "/" + month + "/" + year;
+</script>
   @endsection
   

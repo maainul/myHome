@@ -51,11 +51,11 @@
                       <td>{{ $et-> ex_typ_name }}</td>
                       <td>
                         <form action="{{ route('ex_typs.destroy',$et->id) }}" method="POST">
-                            <a class="btn btn-info" href="{{ route('ex_typs.show',$et->id) }}">Show</a>
-                            <a class="btn btn-primary" href="{{ route('ex_typs.edit',$et->id) }}">Edit</a>
+                            <a class="btn btn-sm btn-info" href="{{ route('ex_typs.show',$et->id) }}">Show</a>
+                            <a class="btn btn-sm btn-primary" href="{{ route('ex_typs.edit',$et->id) }}">Edit</a>
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-danger">Delete</button>
+                            <button type="submit" class="btn btn-sm btn-danger">Delete</button>
                         </form>
                       </td>
                     </tr>

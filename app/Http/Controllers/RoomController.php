@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use DB;
+use App\Models\Renter;
 use App\Models\Room;
 use App\Models\Home;
 use App\Models\Floor;
@@ -42,7 +43,12 @@ class RoomController extends Controller
 
     public function show(Room $room)
     {
-        return view('rooms.show',compact('room'));
+        $renters = DB::table('renters')
+                  ->select('renters.*')
+                  ->where('room_id',$room->id)
+                  ->get();
+        $countRentersByRoom = Renter::where('room_id',$room->id)->count();
+        return view('rooms.show',compact('room','renters','countRentersByRoom'));
     }
 
     public function edit(Room $room)

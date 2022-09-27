@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 use DB;
-// use Intervention\Image\Facades\Image as Image;
 use Image;
 use App\Models\Renter;
 use App\Models\Room;
 use App\Models\Office;
+use App\Models\Floor;
 use App\Models\Home;
 use Illuminate\Http\Request;
 
@@ -38,40 +38,55 @@ class RenterController extends Controller
             'renter_image' => 'required|image|mimes:jpeg,png,jpg|max:2048',
             'gender'=>'required',
             'home_id'=>'required',
+            'office_id'=>'required',
+            'room_id'=>'required',
         ]);
-        $person  = new Renter ;
-        $person->name = $request->name;
-        $person->email = $request->email;
-        $person->e_back = $request->e_back;
-        $person->notes = $request->notes;
-        $person->fb_id = $request->fb_id;
-        $person->home_id = $request->home_id;
-        $person->phone_1 = $request->phone_1;
-        $person->phone_2 = $request->phone_2;
-        $person->office_id = $request->office_id;
-        $person->salary = $request->salary;
-        $person->designation = $request->designation;
-        $person->address = $request->address;
-        $person->gender = $request->gender;
-        $person->nid = $request->nid;
-        $person->birthdate = $request->birthdate;
-        $person->rent_from = $request->rent_from;
-        $person->status = '1';
+        $renter  = new Renter ;
+        $renter->name = $request->name;
+        $renter->email = $request->email;
+        $renter->e_back = $request->e_back;
+        $renter->notes = $request->notes;
+        $renter->fb_id = $request->fb_id;
+        $renter->home_id = $request->home_id;
+        $renter->room_id = $request->room_id;
+        $renter->phone_1 = $request->phone_1;
+        $renter->phone_2 = $request->phone_2;
+        $renter->office_id = $request->office_id;
+        $renter->salary = $request->salary;
+        $renter->designation = $request->designation;
+        $renter->address = $request->address;
+        $renter->gender = $request->gender;
+        $renter->nid = $request->nid;
+        $renter->birthdate = $request->birthdate;
+        $renter->rent_from = $request->rent_from;
+        $renter->status = '1';
         if($request->hasFile('renter_image')){
           $image = $request->file('renter_image');
           $filename = time() . '.' . $image->getClientOriginalExtension();
           Image::make($image)->resize(300, 300)->save('public/image/' . $filename);
-          $person->renter_image = $filename;
-          $person->save();
+          $renter->renter_image = $filename;
+          $renter->save();
         };
-        $person->save();
+        // update status of room 
+        $room = Room::findOrFail($request->room_id);
+        $room->status = '1';
+        $room->save();
+        $renter->save();
         return redirect()->route('renters.index')->with('success','Renter created successfully.');
         
     }
 
     public function show(Renter $renter)
     {
-        return view('renters.show',compact('renter'));
+        $renter = DB::table('renters')
+                    ->join('offices', 'renters.office_id', '=', 'offices.id')
+                    ->join('homes', 'renters.home_id', '=', 'homes.id')
+                    ->join('rooms', 'renters.room_id', '=', 'rooms.id')
+                    ->select('renters.*', 'offices.office_name', 'homes.home_name','rooms.*')
+                    ->where('renters.id',$renter->id)
+                    ->get();
+        $floor= Floor::findOrFail($renter[0]->floor_id);
+        return view('renters.show',compact('renter','floor'));
     }
 
     public function edit(Renter $renter)

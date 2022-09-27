@@ -6,11 +6,6 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateRentersTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
         Schema::create('renters', function (Blueprint $table) {
@@ -22,6 +17,7 @@ class CreateRentersTable extends Migration
             $table->string("email");
             $table->string("fb_id");
             $table->Integer('home_id');
+            $table->Integer('room_id');
             $table->string("phone_1");
             $table->string("phone_2");
             $table->integer('office_id');
@@ -37,11 +33,6 @@ class CreateRentersTable extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::dropIfExists('renters');

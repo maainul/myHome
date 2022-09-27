@@ -1,8 +1,6 @@
 @extends('layouts.app')
 @section('content')
-  <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
     <div class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
@@ -14,33 +12,27 @@
               <li class="breadcrumb-item"><a href="#">Home</a></li>
               <li class="breadcrumb-item active">Dashboard</li>
             </ol>
-          </div><!-- /.col -->
-        </div><!-- /.row -->
-      </div><!-- /.container-fluid -->
+          </div>
+        </div>
+      </div>
     </div>
-    <!-- /.content-header -->
     @if($message = Session::get('success'))
     <div class="alert alert-success">
         <p> {{ $message }} </p>
     </div>
     @endif
-
-    <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
-        <!-- Small boxes (Stat box) -->
         <div class="pull-right">
             <a class="btn btn-success" href="{{ route('renters.create') }}"> Create New Renter</a>
         </div>
         <div class="row">
-          <!-- /.card-header -->
           <div class="card-body">
                 <table class="table table-bordered">
                   <thead>
                     <tr>
                       <th>Image</th>
                       <th>Name</th>
-                      <th>Office</th>
                       <th>Phone</th>
                       <th>Home</th>
                       <th>Status</th>
@@ -56,7 +48,6 @@
                       <td style="width: 20%"><img class="img-rounded w-100 h-100" src="{{ asset('public/image/'.'deff.png') }}"></td>
                       @endif
                       <td>{{ $renter-> name }}</td>
-                      <td>{{ $renter-> office_name }}</td>
                       <td>{{ $renter-> phone_1 }}</td>
                       <td>{{ $renter-> home_name }}</td>
                       @if($renter->status == 1)
@@ -66,25 +57,20 @@
                       @endif
                       <td>
                         <form action="{{ route('renters.destroy',$renter->id) }}" method="POST">
-                            <a class="btn btn-info" href="{{ route('renters.show',$renter->id) }}">Show</a>
-                            <a class="btn btn-primary" href="{{ route('renters.edit',$renter->id) }}">Edit</a>
+                            <a class="btn btn-sm btn-info" href="{{ route('renters.show',$renter->id) }}">Show</a>
+                            <a class="btn btn-sm btn-primary" href="{{ route('renters.edit',$renter->id) }}">Edit</a>
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-danger">Delete</button>
+                            <button type="submit" class="btn btn-sm btn-danger">Delete</button>
                         </form>
                       </td>
                     </tr>
                   @endforeach
                   </tbody>
                 </table>
-            
               </div>
             </div>
-            
-        <!-- /.row -->
-      </div><!-- /.container-fluid -->
-      
+      </div>
     </section>
-    <!-- /.content -->
   </div>
   @endsection

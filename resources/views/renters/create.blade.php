@@ -118,7 +118,7 @@
                   <div class="col-md-4">
                   <div class="form-group">
                     <label for="office_id">Office</label>
-                    <select name="office_id" class="custom-select rounded-0" id="exampleSelectRounded0">
+                    <select name="office_id" class="custom-select rounded-0" >
                     <option value="">-- Office --</option>
                     @foreach ($data as $item)
                     <option value="{{ $item->id}}">{{ $item->office_name}}</option>
@@ -129,8 +129,8 @@
 
                   <div class="col-md-4">
                   <div class="form-group">
-                    <label for="office_id">Rooms</label>
-                    <select name="office_id" class="custom-select rounded-0" id="exampleSelectRounded0">
+                    <label for="room_id">Rooms</label>
+                    <select name="room_id" class="custom-select rounded-0" >
                     <option value="">-- Rooms --</option>
                     @foreach ($rms as $item)
                     <option value="{{ $item->id}}">{{ $item->room_number}}</option>
@@ -142,7 +142,7 @@
                   <div class="col-md-4">
                   <div class="form-group">
                     <label for="gender">Gender</label>
-                    <select name="gender" class="custom-select rounded-0" id="exampleSelectRounded0">
+                    <select name="gender" class="custom-select rounded-0" >
                     <option value="">--Gender--</option>
                     <option value="1">Male</option>
                     <option value="2">Female</option>

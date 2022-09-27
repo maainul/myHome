@@ -38,31 +38,31 @@
                 <table class="table table-bordered">
                   <thead>
                     <tr>
+                      <th >Room Number</th>
                       <th >Room Rent</th>
-                      <th >Electric Bill</th>
-                      <th >Gas Bill</th>
-                      <th >Internet Bill</th>
-                      <th >Water Bill</th>
+                      <th >Rent Month</th>
                       <th >Status</th>
                       <th >Action</th>
                     </tr>
                   </thead>
                   <tbody>
-                  @foreach($rents as $rent)
+                  @foreach($rooms as $rent)
                     <tr>
-                      <td>{{ $rent-> rent_amount }}</td>
-                      <td>{{ $rent-> elct_bill }}</td>
-                      <td>{{ $rent-> gas_bill }}</td>
-                      <td>{{ $rent-> internet_bill }}</td>
-                      <td>{{ $rent-> water_bill }}</td>
-                      @if($rents->status == 1)
-                      <td><span class="badge badge-success">Rent</span></td>
+                      <td>{{ $rent-> room_number }}</td>
+                      <td>{{ $rent-> room_rent }}</td>
+                      <td>January 2022</td>
+                      @if($rent->status == 1)
+                      <td><span class="badge badge-success">Paid</span></td>
                       @else
-                      <td><span class="badge badge-danger">No Rent</span></td>
+                      <td><span class="badge badge-danger">Unpaid</span></td>
                       @endif
                       <td>
-                            <a class="btn btn-info" href="">Show</a>
-                            <a class="btn btn-primary" href="">Edit</a>
+                    <button type="button" class="btn btn-success btn-flat dropdown-toggle dropdown-icon" data-toggle="dropdown" aria-expanded="false">
+                    </button>
+                    <div class="dropdown-menu" role="menu" style="">
+                      <a class="dropdown-item" href="#">Paid</a>
+                      <a class="dropdown-item" href="#">Unpaid</a>
+                    </div>
                       </td>
                     </tr>
                   @endforeach
