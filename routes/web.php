@@ -13,13 +13,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/','WelcomeController@index');
+
+Route::resource('homes','HomeController');
+
 Route::get('/rents','RentController@index');
 Route::get('/rents/create','RentController@create');
 Route::post('/rents/create','RentController@store');
+
 Route::resource('floors','FloorController');
 Route::resource('offices','OfficeController');
+
 Route::resource('renters','RenterController');
+Route::get('renters/gender/{gender_id}', 'RenterController@getByGender');
+
 Route::resource('rooms','RoomController');
+
 Route::resource('ex_typs','ExpenseTypesController');
+
 Route::resource('expenses','ExpenseController');
-Route::resource('homes','HomeController');

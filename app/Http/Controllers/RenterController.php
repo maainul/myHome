@@ -114,4 +114,16 @@ class RenterController extends Controller
         $renter->delete();
         return redirect()->route('renters.index')->with('success','Renter deleted successfully');
     }
+
+    public function getByGender($gender_id)
+    {
+        $renters = DB::table('renters')
+                    ->join('offices', 'renters.office_id', '=', 'offices.id')
+                    ->join('homes', 'renters.home_id', '=', 'homes.id')
+                    ->join('rooms', 'renters.room_id', '=', 'rooms.id')
+                    ->select('renters.*', 'offices.office_name', 'homes.home_name','rooms.*')
+                    ->where('gender',$gender_id)
+                    ->get();
+        return view('renters.index',compact('renters'));
+    }
 }
