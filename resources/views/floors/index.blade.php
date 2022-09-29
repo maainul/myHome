@@ -39,9 +39,9 @@
                 <table class="table table-bordered">
                   <thead>
                     <tr>
-                      <th style="width: 25%">#</th>
-                      <th style="width: 25%">Floor Number</th>
-                      <th style="width: 25%">Home Name</th>
+                      <th>#</th>
+                      <th>Floor Number</th>
+                      <th>Home Name</th>
                       <th style="width: 25%">Action</th>
                     </tr>
                   </thead>
@@ -53,7 +53,6 @@
                       <td>{{ $floor-> home_name }}</td>
                       <td>
                         <form action="{{ route('floors.destroy',$floor->id) }}" method="POST">
-                            <a class="btn btn-sm btn-info" href="{{ route('floors.show',$floor->id) }}">Show</a>
                             <a class="btn btn-sm btn-primary" href="{{ route('floors.edit',$floor->id) }}">Edit</a>
                             @csrf
                             @method('DELETE')

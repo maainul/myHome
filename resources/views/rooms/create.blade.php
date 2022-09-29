@@ -72,43 +72,43 @@
                     <div class="col-md-3">
                       <div class="form-group">
                         <label for="room_number">Room Number</label>
-                        <input type="text" name="room_number" class="form-control" placeholder="Enter Room Number">
+                        <input type="text" name="room_number" class="form-control" value="{{old('room_number')}}" placeholder="Enter Room Number">
                       </div>
                     </div>
                     <div class="col-md-3">
                       <div class="form-group">
                         <label for="room_rent">Room Rent</label>
-                        <input type="number" name="room_rent" class="form-control" placeholder="Enter Room Rent">
+                        <input type="number" name="room_rent" class="form-control" value="{{old('room_rent')}}" placeholder="Enter Room Rent">
                       </div>
                     </div>
                     <div class="col-md-3">
                       <div class="form-group">
                         <label for="gas_bill">Gas Bill</label>
-                        <input type="number" name="gas_bill" class="form-control" placeholder="Enter Gas Bill">
+                        <input type="number" name="gas_bill" class="form-control" value="{{old('gas_bill')}}" placeholder="Enter Gas Bill">
                       </div>
                     </div>
                     <div class="col-md-3">
                       <div class="form-group">
                       <label for="internet_bill">Internet Bill</label>
-                      <input type="number" name="internet_bill" class="form-control" placeholder="Enter Internet Bill">
+                      <input type="number" name="internet_bill" class="form-control" value="{{old('internet_bill')}}" placeholder="Enter Internet Bill">
                       </div>
                     </div>
                     <div class="col-md-3">
                     <div class="form-group">
                     <label for="dish_bill">Dish Bill</label>
-                    <input type="number" name="dish_bill" class="form-control" placeholder="Enter Dish Bill">
+                    <input type="number" name="dish_bill" class="form-control" value="{{old('dish_bill')}}" placeholder="Enter Dish Bill">
                   </div>
                   </div>
                   <div class="col-md-3">
                   <div class="form-group">
                     <label for="water_bill">Water Bill</label>
-                    <input type="number" name="water_bill" class="form-control" placeholder="Enter Water Bill">
+                    <input type="number" name="water_bill" class="form-control" value="{{old('water_bill')}}" placeholder="Enter Water Bill">
                   </div>
                   </div>
                   <div class="col-md-3">
                   <div class="form-group">
                     <label for="dust_bill">Dust Bill</label>
-                    <input type="number" name="dust_bill" class="form-control" placeholder="Enter Dust Bill">
+                    <input type="number" name="dust_bill" class="form-control" value="{{old('dust_bill')}}" placeholder="Enter Dust Bill">
                   </div>
                   </div>
                 </div>

@@ -22,8 +22,8 @@ class OfficeController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'office_name'=>'required',
-            'address'=>'required',
+            'office_name'=>'required|max:50',
+            'address'=>'required|max:300',
         ]);
         Office::create($request->all());
         return redirect()->route('offices.index')->with('success','Office created success.');
@@ -42,8 +42,8 @@ class OfficeController extends Controller
     public function update(Request $request, Office $office)
     {
         $request->validate([
-            'office_name'=>'required',
-            'address'=>'required',
+            'office_name'=>'required|max:50',
+            'address'=>'required|max:300',
         ]);
         $office -> update($request->all());
         return redirect()->route('offices.index')->with('success','Office updated successfully');

@@ -19,7 +19,8 @@ class RoomController extends Controller
                 ->select('rooms.*','homes.*','floors.*')
                 ->get();
         $roomRent = Room::sum('room_rent');
-        return view('rooms.index',compact('rooms','roomRent'))->with('i',(request()->input('page',1)-1)*5);
+        $countRentersByRoom = Renter::where('room_id',1)->count();
+        return view('rooms.index',compact('rooms','roomRent','countRentersByRoom'))->with('i',(request()->input('page',1)-1)*5);
     }
 
     public function create()
@@ -32,7 +33,7 @@ class RoomController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'room_number'=>'required',
+            'room_number'=>'required|max:20',
             'room_rent'=>'required',
             'floor_id'=>'required',
             'home_id'=>'required',
@@ -61,7 +62,7 @@ class RoomController extends Controller
     public function update(Request $request, Room $room)
     {
         $request->validate([
-            'room_number'=>'required',
+            'room_number'=>'required|max:20',
             'room_rent'=>'required',
             'floor_id'=>'required',
             'home_id'=>'required',

@@ -7,12 +7,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Dashboard</h1>
+            <h1 class="m-0">Home</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Dashboard</li>
+              <li class="breadcrumb-item active">Home</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -40,9 +40,9 @@
                   <thead>
                     <tr>
                       <th>#</th>
-                      <th style="width: 25%">Home Name</th>
-                      <th style="width: 25%">Address</th>
-                      <th style="width: 25%">Action</th>
+                      <th>Home Name</th>
+                      <th>Address</th>
+                      <th>Action</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -53,7 +53,6 @@
                       <td>{{ $home-> address }}</td>
                       <td>
                         <form action="{{ route('homes.destroy',$home->id) }}" method="POST">
-                            <a class="btn btn-sm btn-info" href="{{ route('homes.show',$home->id) }}">Show</a>
                             <a class="btn btn-sm btn-primary" href="{{ route('homes.edit',$home->id) }}">Edit</a>
                             @csrf
                             @method('DELETE')

@@ -7,12 +7,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Dashboard</h1>
+            <h1 class="m-0">Room</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Dashboard</li>
+              <li class="breadcrumb-item active">Room</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -27,7 +27,7 @@
         <div class="row">
           <div class="col-lg-12 margin-tb">
               <div class="pull-left">
-                  <h3> Show Room</h3>
+                  <h3>Room Information</h3>
               </div>
               <hr/>
           </div>
@@ -117,7 +117,7 @@
                 </div>
                 <div class="card-footer">
                   <div class="text-right">
-                    <a href="#" class="btn btn-sm btn-primary">
+                    <a href="{{ route('renters.show',$rnts->id) }}" class="btn btn-sm btn-primary">
                       <i class="fas fa-user"></i> View Profile
                     </a>
                   </div>

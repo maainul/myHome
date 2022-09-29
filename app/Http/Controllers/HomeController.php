@@ -20,8 +20,10 @@ class HomeController extends Controller
 
     public function store(Request $request)
     {
+        
         $request -> validate([
-            'home_name' => 'required',
+            'home_name' => 'required|max:50',
+            'address' => 'max:300',
         ]);
         Home::create($request->all());
         return redirect()->route('homes.index')->with('success','Home created successfully.');
@@ -40,7 +42,8 @@ class HomeController extends Controller
     public function update(Request $request, Home $home)
     {
         $request->validate([
-            'home_name' => 'required',
+            'home_name' => 'required|max:50',
+            'address' => 'max:300',
         ]);
 
         $home -> update($request->all());

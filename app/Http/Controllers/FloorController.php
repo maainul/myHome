@@ -26,7 +26,7 @@ class FloorController extends Controller
     public function store(Request $request)
     {
         $request -> validate([
-            'floor_number' => 'required',
+            'floor_number' => 'required|max:10',
             'home_id' => 'required',
         ]);
         Floor::create($request->all());
@@ -47,7 +47,7 @@ class FloorController extends Controller
     public function update(Request $request, Floor $floor)
     {
         $request->validate([
-            'floor_number' => 'required',
+            'floor_number' => 'required|max:10',
             'home_id' => 'required',
         ]);
 

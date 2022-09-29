@@ -55,63 +55,63 @@
                     <div class="col-md-4">
                       <div class="form-group">
                         <label for="name">Name</label>
-                        <input type="text" name="name" class="form-control" placeholder="Enter Name">
+                        <input type="text" name="name" class="form-control" value="{{old('name')}}" placeholder="Enter Name">
                       </div>
                     </div>
                     <div class="col-md-4">
                       <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="text" name="email" class="form-control" placeholder="Enter Email">
+                        <input type="text" name="email" class="form-control" value="{{old('email')}}" placeholder="Enter Email">
                       </div>
                     </div>
                     <div class="col-md-4">
                       <div class="form-group">
                       <label for="fb_id">Facebook ID</label>
-                      <input type="text" name="fb_id" class="form-control" placeholder="Enter Facebook ID">
+                      <input type="text" name="fb_id" class="form-control" value="{{old('fb_id')}}" placeholder="Enter Facebook ID">
                       </div>
                     </div>
                     <div class="col-md-4">
                     <div class="form-group">
                     <label for="phone_1">Phone 1</label>
-                    <input type="text" name="phone_1" class="form-control" placeholder="Enter Phone 1">
+                    <input type="text" name="phone_1" class="form-control" value="{{old('phone_1')}}" placeholder="Enter Phone 1">
                   </div>
                   </div>
                   <div class="col-md-4">
                   <div class="form-group">
                     <label for="phone_2">Phone 2</label>
-                    <input type="text" name="phone_2" class="form-control" placeholder="Enter Phone 2">
+                    <input type="text" name="phone_2" class="form-control" value="{{old('phone_2')}}" placeholder="Enter Phone 2">
                   </div>
                   </div>
                   <div class="col-md-4">
                   <div class="form-group">
                     <label for="salary">Salary</label>
-                    <input type="number" name="salary" class="form-control" placeholder="Enter Salary">
+                    <input type="number" name="salary" class="form-control" value="{{old('salary')}}" placeholder="Enter Salary">
                   </div>
                   </div>
                   <div class="col-md-4">
                   <div class="form-group">
                     <label for="designation">Designation</label>
-                    <input type="text" name="designation" class="form-control" placeholder="Enter Designation">
+                    <input type="text" name="designation" class="form-control" value="{{old('designation')}}" placeholder="Enter Designation">
                   </div>
                   </div>
                   <div class="col-md-4">
                   <div class="form-group">
                     <label for="birthdate">Birthdate</label>
-                    <input type="date" name="birthdate" class="form-control" placeholder="Enter Birthdate">
+                    <input type="date" name="birthdate" class="form-control" value="{{old('birthdate')}}" placeholder="Enter Birthdate">
                   </div>
                   </div>
                   
                   <div class="col-md-4">
                   <div class="form-group">
                     <label for="nid">NID</label>
-                    <input type="number" name="nid" class="form-control" placeholder="Enter nid">
+                    <input type="number" name="nid" class="form-control" value="{{old('name')}}" placeholder="Enter nid">
                   </div>
                   </div>
 
                   <div class="col-md-4">
                   <div class="form-group">
                     <label for="e_back">Educational Background</label>
-                    <input type="text" name="e_back" class="form-control" placeholder="Enter Educational Background">
+                    <input type="text" name="e_back" class="form-control" value="{{old('e_back')}}" placeholder="Enter Educational Background">
                   </div>
                   </div>
 
@@ -164,7 +164,7 @@
                     <div class="col-md-4">
                     <div class="form-group">
                       <label for="rent_from">Rent From Date</label>
-                      <input type="date" name="rent_from" class="form-control" placeholder="Enter Rent From Date">
+                      <input type="date" name="rent_from" class="form-control" value="{{old('rent_from')}}" placeholder="Enter Rent From Date">
                     </div>
                     </div>
                     <div class="col-md-4">

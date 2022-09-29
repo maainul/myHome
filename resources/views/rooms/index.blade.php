@@ -52,12 +52,12 @@
                   <tbody>
                   @foreach($rooms as $room)
                     <tr>
-                      <td>{{ $room-> floor_number }}</td>
                       <td>{{ $room-> home_name}}</td>
+                      <td>{{ $room-> floor_number }}</td>
                       <td>{{ $room-> room_number }}</td>
                       <td>{{ $room-> room_rent }}</td>
                       <td>{{ $room-> internet_bill }}</td>
-                      <td>{{ $roomRent }}</td>
+                      <td>{{ $countRentersByRoom }}</td>
                       <td>{{ $room-> gas_bill }}</td>
                       @if($room->status == 1)
                         <td><span class="badge badge-success">Rent</span></td>

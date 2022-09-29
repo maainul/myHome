@@ -16,6 +16,7 @@ class CreateRentsTable extends Migration
         Schema::create('rents', function (Blueprint $table) {
             $table->id();
             $table->Integer('rent_amount');
+            $table->Integer('room_id');
             $table->Integer('elct_bill');
             $table->Integer('gas_bill');
             $table->Integer('internet_bill');

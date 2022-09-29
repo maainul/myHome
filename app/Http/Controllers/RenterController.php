@@ -34,7 +34,7 @@ class RenterController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name'=>'required',
+            'name'=>'required|max:50',
             'renter_image' => 'required|image|mimes:jpeg,png,jpg|max:2048',
             'gender'=>'required',
             'home_id'=>'required',
@@ -91,10 +91,10 @@ class RenterController extends Controller
 
     public function edit(Renter $renter)
     {
-        $data = Office::all();
+        $office = Office::all();
         $home = Home::all();
         $rms = Room::all();
-        return view('renters.edit',compact('renter','data','home','rms'));
+        return view('renters.edit',compact('renter','office','home','rms'));
     }
 
     public function update(Request $request, Renter $renter)

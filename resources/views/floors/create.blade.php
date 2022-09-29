@@ -51,7 +51,7 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="floor_number">Floor Number</label>
-                    <input type="text" name="floor_number" class="form-control" placeholder="Enter Floor Info">
+                    <input type="text" value="{{old('floor_number')}}" name="floor_number" class="form-control" placeholder="Enter Floor Info">
                   </div>
                 </div>
 

@@ -49,7 +49,7 @@
                 <div class="card-body">
                   <div class="form-group">
                     <label for="ex_typ_name">Expense Type Name</label>
-                    <input type="text" name="ex_typ_name" class="form-control" placeholder="Enter Name Info">
+                    <input type="text" name="ex_typ_name" value="{{old('ex_typ_name')}}" lass="form-control" placeholder="Enter Name Info">
                   </div>
                 </div>
                 <!-- /.card-body -->

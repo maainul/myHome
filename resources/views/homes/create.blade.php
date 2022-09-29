@@ -49,12 +49,12 @@
                 <div class="card-body">
                   <div class="form-group">
                     <label for="home_number">Home Name</label>
-                    <input type="text" name="home_name" class="form-control" placeholder="Enter Home Info">
+                    <input type="text" name="home_name" value="{{old('home_name')}}"  class="form-control" placeholder="Enter Home Info">
                   </div>
                   
                   <div class="form-group">
                   <label  for="address">Address</label>
-                    <textarea class="form-control" name="address" rows="3" placeholder="Enter ..."></textarea>
+                    <textarea class="form-control" name="address"  rows="3" placeholder="Enter ..."></textarea>
                   </div>
                 
                 </div>

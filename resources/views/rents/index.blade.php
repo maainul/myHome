@@ -28,10 +28,6 @@
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
-        <!-- Small boxes (Stat box) -->
-        <div class="pull-right">
-            <a class="btn btn-success" href="{{ url('rents/create') }}"> Create New Rent</a>
-        </div>
         <div class="row">
           <!-- /.card-header -->
           <div class="card-body">
@@ -50,7 +46,7 @@
                     <tr>
                       <td>{{ $rent-> room_number }}</td>
                       <td>{{ $rent-> room_rent }}</td>
-                      <td>January 2022</td>
+                      <td>{{ $rent-> rent_from}}</td>
                       @if($rent->status == 1)
                       <td><span class="badge badge-success">Paid</span></td>
                       @else
