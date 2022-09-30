@@ -54,6 +54,7 @@ class RenterController extends Controller
         $renter->office_id = $request->office_id;
         $renter->salary = $request->salary;
         $renter->designation = $request->designation;
+        $renter->rent_payer = $request->rent_payer;
         $renter->address = $request->address;
         $renter->gender = $request->gender;
         $renter->nid = $request->nid;

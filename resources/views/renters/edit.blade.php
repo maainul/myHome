@@ -116,8 +116,17 @@
                     <div class="form-group">
                       <label for="gender">Gender</label>
                       <select name="gender" class="custom-select rounded-0">
-                        <option value="1">Male</option>
-                        <option value="2">Female</option>
+                        <option value="1" {{$renter->gender == 1 ? 'selected' : ''}}>Male</option>
+                        <option value="2" {{$renter->gender == 2 ? 'selected' : ''}}>Female</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="form-group">
+                      <label for="rent_payer">Rent Payer</label>
+                      <select name="rent_payer" class="custom-select rounded-0">
+                        <option value="1" {{$renter->rent_payer == 1 ? 'selected' : ''}}>Yes</option>
+                        <option value="2" {{$renter->rent_payer == 2 ? 'selected' : ''}}>No</option>
                       </select>
                     </div>
                   </div>

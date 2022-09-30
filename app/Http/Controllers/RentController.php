@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+// use Carbon;
 use DB;
 use App\Models\Renters;
 use App\Models\Rent;
@@ -12,12 +12,21 @@ class RentController extends Controller
 {
     public function index()
     {
-        $rooms = DB::table('renters')
-                    // ->where(DB::raw('MONTH(rent_from) BETWEEN "2015/09/21" and  "2016/09/21" ')) 
+        // $now = new Carbon();   
+        $renters = DB::table('renters')
+                    ->where('rent_payer',1)
                     ->select('renters.*')
                     ->get();
-        dd($rooms);
-        return view('rents.index',compact('rooms'))->with('i',(request()->input('page',1)-1)*5);
+        foreach ($renters as $r) {
+            // echo($r->rent_from);
+            $rents = DB::table('renters')
+                    // ->select(MONTHNAME($r->rent_from))
+                    ->get();
+            dd($rents);
+                 
+        }
+        dd($renters);
+        return view('rents.index',compact('renters'))->with('i',(request()->input('page',1)-1)*5);
     }
 
     public function create()

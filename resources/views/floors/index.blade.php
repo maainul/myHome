@@ -42,7 +42,7 @@
                       <th>#</th>
                       <th>Floor Number</th>
                       <th>Home Name</th>
-                      <th style="width: 25%">Action</th>
+                      <th style="width: 15%">Action</th>
                     </tr>
                   </thead>
                   <tbody>

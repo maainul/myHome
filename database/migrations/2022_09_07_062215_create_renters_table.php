@@ -28,7 +28,8 @@ class CreateRentersTable extends Migration
             $table->string("nid");
             $table->date('birthdate');
             $table->date('rent_from');
-            $table->tinyInteger('status')->default('1');
+            $table->tinyInteger('rent_payer')->default('2'); // 1 = Rent Payer // 2 = Normal Member
+            $table->tinyInteger('status')->default('1'); //1 = Active // InActive
             $table->timestamps();
         });
     }

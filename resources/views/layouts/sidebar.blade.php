@@ -83,23 +83,6 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-edit"></i>
               <p>
-                Renters
-                <i class="fas fa-angle-left right"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="{{ route('renters.index') }}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Renter List</p>
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-edit"></i>
-              <p>
                 Rooms
                 <i class="fas fa-angle-left right"></i>
               </p>
@@ -109,6 +92,23 @@
                 <a href="{{ route('rooms.index') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Room List</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-edit"></i>
+              <p>
+                Renters
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ route('renters.index') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Renter List</p>
                 </a>
               </li>
             </ul>

@@ -43,8 +43,8 @@
                       <th >Room Number</th>
                       <th >Room Rent</th>
                       <th >Internet Bill</th>
-                      <th >Total Rent</th>
-                      <th >Total Members</th>
+                      <th >Rent</th>
+                      <th >Members</th>
                       <th >Status</th>
                       <th >Action</th>
                     </tr>
