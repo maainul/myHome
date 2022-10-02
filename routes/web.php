@@ -31,3 +31,13 @@ Route::resource('rooms','RoomController');
 Route::resource('ex_typs','ExpenseTypesController');
 
 Route::resource('expenses','ExpenseController');
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});
