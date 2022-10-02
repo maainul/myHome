@@ -259,45 +259,10 @@
                                   </tr>
                                   <tr>
                                     <td>Misc</td>
-                                    <td>Dillo 0.8</td>
-                                    <td>Embedded devices</td>
-                                    <td>-</td>
-                                    <td>X</td>
-                                  </tr>
-                                  <tr>
-                                    <td>Misc</td>
-                                    <td>Links</td>
-                                    <td>Text only</td>
-                                    <td>-</td>
-                                    <td>X</td>
-                                  </tr>
-                                  <tr>
-                                    <td>Misc</td>
                                     <td>Lynx</td>
                                     <td>Text only</td>
                                     <td>-</td>
                                     <td>X</td>
-                                  </tr>
-                                  <tr>
-                                    <td>Misc</td>
-                                    <td>IE Mobile</td>
-                                    <td>Windows Mobile 6</td>
-                                    <td>-</td>
-                                    <td>C</td>
-                                  </tr>
-                                  <tr>
-                                    <td>Misc</td>
-                                    <td>PSP browser</td>
-                                    <td>PSP</td>
-                                    <td>-</td>
-                                    <td>C</td>
-                                  </tr>
-                                  <tr>
-                                    <td>Other browsers</td>
-                                    <td>All others</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>U</td>
                                   </tr>
                                 </tbody>
                                 <tfoot>

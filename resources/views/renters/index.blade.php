@@ -36,16 +36,16 @@
                       <th>Phone</th>
                       <th>Home</th>
                       <th>Status</th>
-                      <th>Action</th>
+                      <th style="width: 20%">Action</th>
                     </tr>
                   </thead>
                   <tbody>
                   @foreach($renters as $renter)
                     <tr>
                       @if(!empty($renter->renter_image))
-                      <td style="width: 20%"><img class="img-rounded w-100 h-100" src="{{ asset('public/image/'.$renter->renter_image) }}" title="Renter image"></td>
+                      <td style="width: 12%"><img class="img-rounded w-100 h-100" src="{{ asset('public/image/'.$renter->renter_image) }}" title="Renter image"></td>
                       @else
-                      <td style="width: 20%"><img class="img-rounded w-100 h-100" src="{{ asset('public/image/'.'deff.png') }}"></td>
+                      <td style="width: 12%"><img class="img-rounded w-100 h-100" src="{{ asset('public/image/'.'deff.png') }}"></td>
                       @endif
                       <td>{{ $renter-> name }}</td>
                       <td>{{ $renter-> phone_1 }}</td>

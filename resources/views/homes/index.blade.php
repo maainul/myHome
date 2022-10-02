@@ -42,7 +42,7 @@
                       <th>#</th>
                       <th>Home Name</th>
                       <th>Address</th>
-                      <th>Action</th>
+                      <th style="width: 15%">Action</th>
                     </tr>
                   </thead>
                   <tbody>
