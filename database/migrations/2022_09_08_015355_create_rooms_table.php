@@ -16,10 +16,11 @@ class CreateRoomsTable extends Migration
         Schema::create('rooms', function (Blueprint $table) {
             $table->id();
             $table->string("room_number");
+            $table->string("created_by");
             $table->integer('floor_id');
             $table->Integer('home_id');
             $table->tinyInteger('status')->default('2'); // 1->rent 2->nonrent
-            $table->integer('room_rent');
+            $table->integer('room_rent')->default('0');
             $table->integer('gas_bill')->default('0');
             $table->integer('internet_bill')->default('0');
             $table->integer('dish_bill')->default('0');

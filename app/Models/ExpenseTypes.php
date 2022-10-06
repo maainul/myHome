@@ -7,5 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class ExpenseTypes extends Model
 {
-    protected $fillable = ['ex_typ_name'];
+    protected $fillable = ['ex_typ_name','created_by'];
 }

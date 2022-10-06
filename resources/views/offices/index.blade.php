@@ -63,7 +63,7 @@
                   @endforeach
                   </tbody>
                 </table>
-                {!! $offices->links() !!}
+                {{-- {!! $offices->links() !!} --}}
               </div>
             </div>
             

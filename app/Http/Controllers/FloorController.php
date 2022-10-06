@@ -1,25 +1,28 @@
 <?php
 
 namespace App\Http\Controllers;
-use DB;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 use App\Models\Floor;
 use App\Models\Home;
 use Illuminate\Http\Request;
 
 class FloorController extends Controller
 {
+    
     public function index()
     {
         $floors = DB::table('floors')
                 ->join('homes','homes.id','=','floors.home_id')
                 ->select('floors.*','homes.*')
+                ->where('floors.created_by','=',Auth::user()->id)
                 ->get();
         return view('floors.index',compact('floors'))->with('i',(request()->input('page',1)-1)*5);
     }
 
     public function create()
     {
-        $home = Home::all();
+        $home = Home::where('created_by','=',Auth::user()->id)->get();
         return view('floors.create',['home'=>$home]);
     }
 
@@ -29,7 +32,11 @@ class FloorController extends Controller
             'floor_number' => 'required|max:10',
             'home_id' => 'required',
         ]);
-        Floor::create($request->all());
+        $floor = new Floor;
+        $floor-> floor_number = $request->floor_number;
+        $floor-> home_id = $request->home_id;
+        $floor-> created_by = Auth::user()->id;
+        $floor->save();
         return redirect()->route('floors.index')->with('success','Floor created successfully.');
     }
 

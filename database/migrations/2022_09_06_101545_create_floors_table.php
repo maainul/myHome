@@ -17,6 +17,7 @@ class CreateFloorsTable extends Migration
             $table->id();
             $table->string('floor_number');
             $table->Integer('home_id');
+            $table->string('created_by');
             $table->timestamps();
         });
     }

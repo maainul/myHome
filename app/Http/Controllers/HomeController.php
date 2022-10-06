@@ -2,14 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use App\Models\Home;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
     public function index()
     {
-        $homes = Home::latest()->paginate(5);
+        $homes = DB::table('homes')
+        ->select('homes.*')
+        ->where('created_by','=',Auth::user()->id)
+        ->get();
         return view('homes.index',compact('homes'))->with('i',(request()->input('page',1)-1)*5);
     }
 
@@ -20,12 +25,15 @@ class HomeController extends Controller
 
     public function store(Request $request)
     {
-        
         $request -> validate([
             'home_name' => 'required|max:50',
             'address' => 'max:300',
         ]);
-        Home::create($request->all());
+        $home  = new Home ;
+        $home->home_name = $request->home_name;
+        $home->address = $request->address;
+        $home->created_by = Auth::user()->id;
+        $home->save();
         return redirect()->route('homes.index')->with('success','Home created successfully.');
     }
 

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 // use Carbon;
-use DB;
+use Illuminate\Support\Facades\DB;
 use App\Models\Renters;
 use App\Models\Rent;
 use App\Models\Room;

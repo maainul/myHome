@@ -16,6 +16,7 @@ class CreateRentersTable extends Migration
             $table->string("notes");
             $table->string("email");
             $table->string("fb_id");
+            $table->string("created_by");
             $table->Integer('home_id');
             $table->Integer('room_id');
             $table->string("phone_1");

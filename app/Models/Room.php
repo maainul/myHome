@@ -13,6 +13,7 @@ class Room extends Model
         'room_rent',
         'home_id',
         'floor_id',
+        'created_by',
         // 'internet_bill',
         // 'water_bill',
         // 'dust_bill',

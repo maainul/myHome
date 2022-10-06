@@ -11,6 +11,7 @@ class Expense extends Model
         'expense_type',
         'expense_name',
         'home_id',
+        'created_by',
         'ex_des',
         'amount',
         'ex_date',

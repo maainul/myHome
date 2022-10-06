@@ -17,6 +17,7 @@ class CreateRentsTable extends Migration
             $table->id();
             $table->Integer('rent_amount');
             $table->Integer('renter_id');
+            $table->string('created_by');
             $table->Integer('elct_bill');
             $table->Integer('gas_bill');
             $table->Integer('internet_bill');

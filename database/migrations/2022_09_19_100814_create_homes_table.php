@@ -17,6 +17,7 @@ class CreateHomesTable extends Migration
             $table->id();
             $table->string('home_name');
             $table->string('address')->nullable();
+            $table->string('created_by')->nullable();
             $table->timestamps();
         });
     }

@@ -4,13 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Models\ExpenseTypes;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ExpenseTypesController extends Controller
 {
 
     public function index()
     {
-        $ex_typs = ExpenseTypes::latest()->paginate(5);
+        $ex_typs = ExpenseTypes::where('created_by', Auth::user()->id)->get();
         return view('ex_typs.index',compact('ex_typs'))->with('i',(request()->input('page',1)-1)*5);
     }
 
@@ -21,10 +22,14 @@ class ExpenseTypesController extends Controller
 
     public function store(Request $request)
     {
+
         $request-> validate([
             'ex_typ_name'=> 'required|max:50',
         ]);
-        ExpenseTypes::create($request->all());
+        $ex_typs = new ExpenseTypes;
+        $ex_typs->ex_typ_name = $request->ex_typ_name;
+        $ex_typs->created_by = Auth::user()->id;
+        $ex_typs->save();
         return redirect()->route('ex_typs.index')->with('success','Expense Type created successfully.');
     }
 

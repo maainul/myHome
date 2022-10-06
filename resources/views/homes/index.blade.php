@@ -63,7 +63,7 @@
                   @endforeach
                   </tbody>
                 </table>
-                {!! $homes->links() !!}
+                {{-- {!! $homes->links() !!} --}}
               </div>
             </div>
             

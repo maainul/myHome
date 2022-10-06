@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use DB;
+use Illuminate\Support\Facades\DB;
 use App\Models\Expense;
 use App\Models\Home;
 use App\Models\ExpenseTypes;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 
 class ExpenseController extends Controller
 {
@@ -17,6 +19,7 @@ class ExpenseController extends Controller
         ->join('expense_types','expense_types.id','=','expenses.expense_type')
         ->join('homes','homes.id','=','expenses.home_id')
         ->select('expenses.*','homes.*','expense_types.*')
+        ->where('expenses.created_by','=',Auth::user()->id)
         ->get();
         $totalExpense = $total = Expense::sum('amount');
         return view('expenses.index',compact('expenses','totalExpense'))->with('i',(request()->input('page',1)-1)*5);
@@ -24,8 +27,8 @@ class ExpenseController extends Controller
 
     public function create()
     {
-        $data = ExpenseTypes::all();
-        $home = Home::all();
+        $data = ExpenseTypes::where('created_by','=',Auth::user()->id)->get();
+        $home = Home::where('created_by','=',Auth::user()->id)->get();
         return view('expenses.create',['data'=>$data,'home'=>$home]);
     }
 
@@ -38,7 +41,17 @@ class ExpenseController extends Controller
             'ex_date'=>'required',
             'home_id'=>'required',
         ]);
-        Expense::create($request->all());
+        $expense = new Expense;
+        $expense->expense_type = $request->expense_type;
+        $expense->ex_des = $request->ex_des;
+        $expense->expense_name = $request->expense_name;
+        $expense->amount = $request->amount;
+        $expense->ex_date = $request->ex_date;
+        $expense->home_id = $request->home_id;
+        $expense->status = 1;
+        $expense->expense_type = $request->expense_type;
+        $expense->created_by= Auth::user()->id;
+        $expense->save();
         return redirect()->route('expenses.index')->with('success','Expense created successfully.');
     }
 
@@ -49,8 +62,8 @@ class ExpenseController extends Controller
 
     public function edit(Expense $expense)
     {
-        $data = ExpenseTypes::all();
-        $home = Home::all();
+        $data = ExpenseTypes::where('created_by','=',Auth::user()->id)->get();
+        $home = Home::where('created_by','=',Auth::user()->id)->get();
         return view('expenses.edit',compact('expense','data','home'));
     }
 

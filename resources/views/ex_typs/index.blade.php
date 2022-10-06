@@ -62,7 +62,7 @@
                   @endforeach
                   </tbody>
                 </table>
-                {!! $ex_typs->links() !!}
+                {{-- {!! $ex_typs->links() !!} --}}
               </div>
             </div>
         <!-- /.row -->

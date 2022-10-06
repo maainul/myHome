@@ -83,22 +83,6 @@ return [
     'locale' => 'en',
 
     /*
-|--------------------------------------------------------------------------
-| Available locales
-|--------------------------------------------------------------------------
-|
-| List all locales that your application works with
-|
-*/
-
-'available_locales' => [
-    'English' => 'en',
-    'Russian' => 'ru',
-    'French' => 'fr',
-    'Bangladesh' => 'bd',
-  ],
-
-    /*
     |--------------------------------------------------------------------------
     | Application Fallback Locale
     |--------------------------------------------------------------------------
@@ -178,7 +162,6 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
-
         /*
          * Package Service Providers...
          */

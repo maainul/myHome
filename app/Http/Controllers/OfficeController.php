@@ -4,13 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Models\Office;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class OfficeController extends Controller
 {
 
     public function index()
     {
-        $offices = Office::latest()->paginate(5);
+        $offices = Office::where('created_by','=',Auth::user()->id)->get();
         return view('offices.index',compact('offices'))->with('i',(request()->input('page',1)-1)*5);
     }
 
@@ -25,7 +26,11 @@ class OfficeController extends Controller
             'office_name'=>'required|max:50',
             'address'=>'required|max:300',
         ]);
-        Office::create($request->all());
+        $office = new Office;
+        $office->office_name = $request->office_name;
+        $office->address = $request->address;
+        $office->created_by = Auth::user()->id;
+        $office->save();
         return redirect()->route('offices.index')->with('success','Office created success.');
     }
 
