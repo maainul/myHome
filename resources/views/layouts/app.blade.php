@@ -20,29 +20,21 @@
     <link rel="stylesheet" href="{{ asset('plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
     <link rel="stylesheet" href="{{ asset('plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
     <link rel="stylesheet" href="{{ asset('plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
-
-
     <!-- Styles -->
-    {{-- <link rel="stylesheet" href="{{ asset('css/app.css') }}"> --}}
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     {{-- @livewireStyles --}}
-
     <!-- Scripts -->
-    {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
-
-</head>
-
-</head>
+    <script src="{{ asset('js/app.js') }}" defer></script>
 </head>
 
 <body class="hold-transition sidebar-mini">
-    {{-- @livewire('navigation-menu') --}}
     <div class="wrapper">
         @include('layouts.header')
         @include('layouts.sidebar')
         @yield('content')
         @include('layouts.footer')
     </div>
-    {{-- @livewireScripts --}}
+    @livewireScripts
 </body>
 
 </html>
