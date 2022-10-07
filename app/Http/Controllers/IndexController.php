@@ -6,9 +6,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 /*
+    0 = admin
     1 = super admin
-    2 = admin
-    0 = user
+    2 = user
 */
 
 class IndexController extends Controller
@@ -18,7 +18,7 @@ class IndexController extends Controller
         if ($role=="1"){
             return view('superadmin');
         }
-        else if ($role == "2"){
+        else if ($role == "0"){
             return view('admin');
         }else{
             return view('renter');

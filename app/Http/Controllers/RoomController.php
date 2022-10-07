@@ -18,7 +18,7 @@ class RoomController extends Controller
             ->join('homes', 'homes.id', '=', 'rooms.home_id')
             ->join('floors', 'floors.id', '=', 'rooms.floor_id')
             ->where('rooms.created_by', '=', Auth::user()->id)
-            ->select('rooms.*', 'homes.*', 'floors.*')
+            ->select('rooms.*', 'homes.home_name','homes.address', 'floors.floor_number')
             ->get();
         $roomRent = Room::sum('room_rent');
         $countRentersByRoom = 10;

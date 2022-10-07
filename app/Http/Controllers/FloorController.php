@@ -14,8 +14,8 @@ class FloorController extends Controller
     {
         $floors = DB::table('floors')
                 ->join('homes','homes.id','=','floors.home_id')
-                ->select('floors.*','homes.*')
                 ->where('floors.created_by','=',Auth::user()->id)
+                ->select('floors.*','homes.home_name')
                 ->get();
         return view('floors.index',compact('floors'))->with('i',(request()->input('page',1)-1)*5);
     }
@@ -47,7 +47,7 @@ class FloorController extends Controller
 
     public function edit(Floor $floor)
     {
-        $home = Home::all();
+        $home = Home::where('created_by','=',Auth::user()->id)->get();
         return view('floors.edit',compact('floor','home'));
     }
 

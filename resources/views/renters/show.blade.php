@@ -50,49 +50,7 @@
             <!-- /.card-body -->
           </div>
           <!-- /.card -->
-
-          <!-- About Me Box -->
-          <div class="card card-primary">
-            <div class="card-header">
-              <h3 class="card-title">About <strong>{{$rnts->name}}</strong></h3>
-            </div>
-            <!-- /.card-header -->
-            <div class="card-body">
-              <strong><i class="fas fa-book mr-1"></i> Education</strong>
-
-              <p class="text-muted">
-                {{$rnts->e_back}}
-              </p>
-              <hr>
-              <strong><i class="fas fa-pencil-alt mr-1"></i> Salary</strong>
-              <p class="text-muted">{{$rnts->salary}}</p>
-              <hr>
-              <strong><i class="fas fa-pencil-alt mr-1"></i> Home Name</strong>
-              <p class="text-muted">{{$rnts->home_name}}</p>
-              <hr>
-              <strong><i class="fas fa-pencil-alt mr-1"></i>Room Rent</strong>
-              <p class="text-muted">{{$rnts->room_rent}}</p>
-              <hr>
-              <strong><i class="fas fa-pencil-alt mr-1"></i>Floor</strong>
-              <p class="text-muted">{{$floor->floor_number}}</p>
-              <hr>
-              <strong><i class="fas fa-pencil-alt mr-1"></i> NID</strong>
-              <p class="text-muted">{{$rnts->nid}}</p>
-              <hr>
-              <strong><i class="fas fa-pencil-alt mr-1"></i> Gender</strong>
-              @if($rnts->status == 1)
-              <p class="text-muted">Male</p>
-              @else
-              <p class="text-muted">Female</p>
-              @endif
-              <hr>
-              <strong><i class="far fa-file-alt mr-1"></i> Notes</strong>
-              <p class="text-muted">{{$rnts->notes}}</p>
-            </div>
-            @endforeach
-            <!-- /.card-body -->
-          </div>
-          <!-- /.card -->
+          @endforeach
         </div>
         <!-- /.col -->
         <div class="col-md-9">
@@ -171,19 +129,12 @@
                               <!-- /.col -->
                             </div>
                             <!-- /.row -->
-
                             <div class="row">
                               <!-- accepted payments column -->
                               <div class="col-6">
-                                <p class="lead">Payment Methods:</p>
-                                <img src="../../dist/img/credit/visa.png" alt="Visa">
-                                <img src="../../dist/img/credit/american-express.png" alt="American Express">
-                                <img src="../../dist/img/credit/paypal2.png" alt="Paypal">
                               </div>
                               <!-- /.col -->
                               <div class="col-6">
-                                <p class="lead">Amount Due 2033</p>
-
                                 <div class="table-responsive">
                                   <table class="table">
                                     <tr>
