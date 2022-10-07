@@ -13,7 +13,7 @@
                     <div class="small-box bg-info">
                         <div class="inner">
                             <h3>{{ $totalExpense }}</h3>
-                            <p>Total Expense</p>
+                            <p>Total sdffadf</p>
                         </div>
                         <div class="icon">
                             <i class="ion ion-bag"></i>

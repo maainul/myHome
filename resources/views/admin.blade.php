@@ -1,4 +1,3 @@
-
 @extends('layouts.app')
 @section('content')
 <!-- Content Wrapper. Contains page content -->
@@ -13,7 +12,7 @@
                     <!-- small box -->
                     <div class="small-box bg-info">
                         <div class="inner">
-                            {{-- <h3>{{ $totalExpense }}</h3> --}}
+                            <h3>{{ $totalExpense }}</h3>
                             <p>Total Expense</p>
                         </div>
                         <div class="icon">
@@ -27,7 +26,7 @@
                     <!-- small box -->
                     <div class="small-box bg-success">
                         <div class="inner">
-                            {{-- <h3>{{ $totalRoom }}</h3> --}}
+                            <h3>{{ $totalRoom }}</h3>
                             <p>Total Room</p>
                         </div>
                         <div class="icon">
@@ -41,7 +40,7 @@
                     <!-- small box -->
                     <div class="small-box bg-warning">
                         <div class="inner">
-                            {{-- <h3>{{ $totalNonRentRoom }}</h3> --}}
+                            <h3>{{ $totalNonRentRoom }}</h3>
                             <p>Non Rent</p>
                         </div>
                         <div class="icon">
@@ -55,7 +54,7 @@
                     <!-- small box -->
                     <div class="small-box bg-danger">
                         <div class="inner">
-                            {{-- <h3>{{ $totalActiveRenter }}</h3> --}}
+                            <h3>{{ $totalActiveRenter }}</h3>
                             <p>Total Active Renter</p>
                         </div>
                         <div class="icon">
@@ -68,7 +67,7 @@
                     <!-- small box -->
                     <div class="small-box bg-danger">
                         <div class="inner">
-                            {{-- <h3>{{ $totalRenter }}</h3> --}}
+                            <h3>{{ $totalRenter }}</h3>
                             <p>Total Renter</p>
                         </div>
                         <div class="icon">
@@ -83,7 +82,7 @@
                     <!-- small box -->
                     <div class="small-box bg-danger">
                         <div class="inner">
-                            {{-- <h3>{{ $totalFemaleRenter }}</h3> --}}
+                            <h3>{{ $totalFemaleRenter }}</h3>
                             <p>Total Female Renter</p>
                         </div>
                         <div class="icon">
@@ -98,7 +97,7 @@
                     <!-- small box -->
                     <div class="small-box bg-danger">
                         <div class="inner">
-                            {{-- <h3>{{ $totalMaleRenter }}</h3> --}}
+                            <h3>{{ $totalMaleRenter }}</h3>
                             <p>Total Male Renter</p>
                         </div>
                         <div class="icon">
@@ -113,8 +112,7 @@
                 <div class="col-md-3">
                     <div class="small-box bg-warning">
                         <div class="inner">
-                            <h3>44</h3>
-
+                            <h3>{{ $users }}</h3>
                             <p>User Registrations</p>
                         </div>
                         <div class="icon">
