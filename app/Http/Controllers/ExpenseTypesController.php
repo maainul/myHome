@@ -24,7 +24,7 @@ class ExpenseTypesController extends Controller
     {
 
         $request-> validate([
-            'ex_typ_name'=> 'required|max:50',
+            'ex_typ_name'=> 'required|max:50|min:3',
         ]);
         $ex_typs = new ExpenseTypes;
         $ex_typs->ex_typ_name = $request->ex_typ_name;

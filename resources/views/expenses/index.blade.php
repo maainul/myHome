@@ -57,7 +57,9 @@
                     <td>{{ $expense-> home_name }}</td>
                     <td>
                       <form action="{{ route('expenses.destroy',$expense->id) }}" method="POST">
-                        <a class="btn btn-sm btn-primary" href="{{ route('expenses.edit',$expense->id) }}">Edit</a>
+                        {{-- <a class="btn btn-sm btn-primary" href="{{ route('expenses.edit',$expense->id) }}">Edit</a> --}}
+                        <a href="{{ route('expenses.edit',$expense->id) }}" class="btn btn-info"><i class="fas fa-pencil-alt"></i></a>
+
                         @csrf
                         @method('DELETE')
                         {{-- <button type="submit" class="btn btn-sm btn-danger">Delete</button> --}}

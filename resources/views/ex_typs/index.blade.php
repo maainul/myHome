@@ -1,73 +1,79 @@
 @extends('layouts.app')
 @section('content')
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <div class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1 class="m-0">Dashboard</h1>
-          </div><!-- /.col -->
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Dashboard</li>
-            </ol>
-          </div><!-- /.col -->
-        </div><!-- /.row -->
-      </div><!-- /.container-fluid -->
-    </div>
-    <!-- /.content-header -->
-    @if($message = Session::get('success'))
-    <div class="alert alert-success">
-        <p> {{ $message }} </p>
-    </div>
-    @endif
-
-    <!-- Main content -->
-    <section class="content">
-      <div class="container-fluid">
-        <!-- Small boxes (Stat box) -->
-        <div class="pull-right">
-            <a class="btn btn-success" href="{{ route('ex_typs.create') }}"> Create New ET</a>
-        </div>
-        <div class="row">
-        
-          <!-- /.card-header -->
-          <div class="card-body">
-                <table class="table table-bordered">
-                  <thead>
-                    <tr>
-                      <th style="width: 25%">#</th>
-                      <th style="width: 25%">Expense Type Name</th>
-                      <th style="width: 25%">Action</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                  @foreach($ex_typs as $et)
-                    <tr>
-                      <td>{{ ++$i }}</td>
-                      <td>{{ $et-> ex_typ_name }}</td>
-                      <td>
-                        <form action="{{ route('ex_typs.destroy',$et->id) }}" method="POST">
-                            <a class="btn btn-sm btn-info" href="{{ route('ex_typs.show',$et->id) }}">Show</a>
-                            <a class="btn btn-sm btn-primary" href="{{ route('ex_typs.edit',$et->id) }}">Edit</a>
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn btn-sm btn-danger">Delete</button>
-                        </form>
-                      </td>
-                    </tr>
-                  @endforeach
-                  </tbody>
-                </table>
-                {{-- {!! $ex_typs->links() !!} --}}
-              </div>
-            </div>
-        <!-- /.row -->
-      </div><!-- /.container-fluid -->
-    </section>
-    <!-- /.content -->
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <div class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1 class="m-0">Dashboard</h1>
+        </div><!-- /.col -->
+        <div class="col-sm-6">
+          <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item active">Dashboard</li>
+          </ol>
+        </div><!-- /.col -->
+      </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
   </div>
-  @endsection
+  <!-- /.content-header -->
+  @if($message = Session::get('success'))
+  <div class="alert alert-success">
+    <p> {{ $message }} </p>
+  </div>
+  @endif
+
+  <!-- Main content -->
+  <section class="content">
+    <div class="container-fluid">
+      <!-- Small boxes (Stat box) -->
+      <div class="pull-right">
+        <a class="btn btn-success" href="{{ route('ex_typs.create') }}"> Create New ET</a>
+      </div>
+      <div class="row">
+        <!-- /.card-header -->
+        <div class="card-body">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th style="width: 5%">View</th>
+                <th>Expense Type Name</th>
+                <th style="width: 10%">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              @foreach($ex_typs as $et)
+              <tr>
+                <td>
+                  <div class="btn-group btn-group-sm">
+                    <a href="{{ route('ex_typs.show',$et->id) }}" class="btn btn-primary"><i class="fa fa-eye "></i></a>
+                  </div>
+                </td>
+                <td>{{ $et-> ex_typ_name }}</td>
+                <td style="width: 10%">
+                  <form action="{{ route('ex_typs.destroy',$et->id) }}" method="POST">
+                    <div class="btn-group btn-group-sm">
+                      <a href="{{ route('ex_typs.edit',$et->id) }}" class="btn btn-warning"><i
+                          class="fas fa-pencil-alt"></i></a>
+                      @csrf
+                      @method('DELETE')
+                      <button type="submit" class="btn btn-danger"
+                        style="color: white;background-color:rgb(196, 15, 15)"><i class="fas fa-trash"></i></button>
+                  </form>
+        </div>
+        </td>
+        </tr>
+        @endforeach
+        </tbody>
+        </table>
+        {{-- {!! $ex_typs->links() !!} --}}
+      </div>
+    </div>
+    <!-- /.row -->
+</div><!-- /.container-fluid -->
+</section>
+<!-- /.content -->
+</div>
+@endsection
