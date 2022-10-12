@@ -22,10 +22,10 @@ class RentController extends Controller
             $rents = DB::table('renters')
                     // ->select(MONTHNAME($r->rent_from))
                     ->get();
-            dd($rents);
+            // dd($rents);
                  
         }
-        dd($renters);
+        // dd($renters);
         return view('rents.index',compact('renters'))->with('i',(request()->input('page',1)-1)*5);
     }
 

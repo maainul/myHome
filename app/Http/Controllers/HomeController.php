@@ -26,7 +26,7 @@ class HomeController extends Controller
     public function store(Request $request)
     {
         $request -> validate([
-            'home_name' => 'required|max:50',
+            'home_name' => 'required|max:50|unique:homes,home_name',
             'address' => 'max:300',
         ]);
         $home  = new Home ;
@@ -50,7 +50,7 @@ class HomeController extends Controller
     public function update(Request $request, Home $home)
     {
         $request->validate([
-            'home_name' => 'required|max:50',
+            'home_name' => 'required|max:50|',
             'address' => 'max:300',
         ]);
 

@@ -29,7 +29,7 @@ class FloorController extends Controller
     public function store(Request $request)
     {
         $request -> validate([
-            'floor_number' => 'required|max:10',
+            'floor_number' => 'required|max:10|unique:floors,floor_number',
             'home_id' => 'required',
         ]);
         $floor = new Floor;

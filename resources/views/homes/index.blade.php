@@ -54,7 +54,7 @@
                 <td>
                   <form action="{{ route('homes.destroy',$home->id) }}" method="POST">
                     <div class="btn-group btn-group-sm">
-                      <a href="{{ route('homes.edit',$home->id) }}" class="btn btn-info"><i class="fas fa-eye"></i></a>
+                      <a href="{{ route('homes.edit',$home->id) }}" class="btn btn-info"><i class="fas fa-pencil-alt"></i></a>
                       @csrf
                       @method('DELETE')
                       <button type="submit" class="btn btn-danger"

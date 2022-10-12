@@ -55,12 +55,13 @@
                   <div>
                     <form action="{{ route('offices.destroy',$office->id) }}" method="POST">
                       <div class="btn-group btn-group-sm">
-                        <a href="{{ route('offices.edit',$office->id) }}" class="btn btn-info"><i class="fas fa-pencil-alt"></i></a>
+                        <a href="{{ route('offices.edit',$office->id) }}" class="btn btn-info"><i
+                            class="fas fa-pencil-alt"></i></a>
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger"
                           style="color: white;background-color:rgb(196, 15, 15)"><i class="fas fa-trash"></i></button>
-                    </form>    
+                    </form>
                   </div>
                 </td>
               </tr>
@@ -70,7 +71,6 @@
           {{-- {!! $offices->links() !!} --}}
         </div>
       </div>
-
       <!-- /.row -->
     </div><!-- /.container-fluid -->
 

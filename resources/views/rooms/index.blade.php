@@ -76,19 +76,19 @@
                       <button type="submit" class="btn btn-danger"
                         style="color: white;background-color:rgb(196, 15, 15)"><i class="fas fa-trash"></i></button>
                   </form>
-                </div>
-                </td>
-              </tr>
-              @endforeach
-            </tbody>
-          </table>
         </div>
+        </td>
+        </tr>
+        @endforeach
+        </tbody>
+        </table>
       </div>
+    </div>
 
-      <!-- /.row -->
-    </div><!-- /.container-fluid -->
+    <!-- /.row -->
+</div><!-- /.container-fluid -->
 
-  </section>
-  <!-- /.content -->
+</section>
+<!-- /.content -->
 </div>
 @endsection

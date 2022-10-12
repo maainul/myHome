@@ -36,7 +36,7 @@ class ExpenseController extends Controller
     {
         $request->validate([
             'expense_type' => 'required',
-            'expense_name' => 'required|max:50|min:3',
+            'expense_name' => 'required|max:50|min:3|unique:expenses,expense_name',
             'amount' => 'required',
             'ex_date' => 'required',
             'home_id' => 'required',

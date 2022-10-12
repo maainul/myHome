@@ -23,7 +23,7 @@ class OfficeController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'office_name'=>'required|max:50',
+            'office_name'=>'required|max:50|unique:offices,office_name',
             'address'=>'required|max:300',
         ]);
         $office = new Office;
