@@ -1,10 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-// use Carbon;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use App\Models\Renters;
 use App\Models\Rent;
+use App\Models\Home;
 use App\Models\Room;
 use Illuminate\Http\Request;
 
@@ -12,7 +13,6 @@ class RentController extends Controller
 {
     public function index()
     {
-        // $now = new Carbon();   
         $renters = DB::table('renters')
                     ->where('rent_payer',1)
                     ->select('renters.*')
@@ -31,7 +31,13 @@ class RentController extends Controller
 
     public function create()
     {
-        return view('rents.create');
+        $homes = Home::where('created_by','=',Auth::user()->id)->get();
+        $rooms = DB::table('rooms')
+                    ->where('rooms.created_by','=',Auth::user()->id)
+                    ->join('homes','rooms.home_id','=','homes.id')
+                    ->select('rooms.*','homes.*')
+                    ->get();
+        return view('rents.create',['rooms'=>$rooms,'homes'=>$homes]);
     }
 
     public function store(Request $request)
